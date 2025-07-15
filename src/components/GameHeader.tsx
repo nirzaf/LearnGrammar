@@ -4,13 +4,14 @@ interface GameHeaderProps {
   starDust: number
   companionEvolution: number
   onShowAchievements?: () => void
+  onShowCompanion?: () => void
 }
 
 /**
  * Game header component displaying player stats, companion, and navigation
  * Shows star dust currency, companion status, and game controls
  */
-const GameHeader: React.FC<GameHeaderProps> = ({ starDust, companionEvolution }) => {
+const GameHeader: React.FC<GameHeaderProps> = ({ starDust, companionEvolution, onShowAchievements, onShowCompanion }) => {
   const [showCompanionDetails, setShowCompanionDetails] = useState(false)
 
   /**
@@ -41,9 +42,9 @@ const GameHeader: React.FC<GameHeaderProps> = ({ starDust, companionEvolution })
 
           {/* Center - Companion */}
           <div className="flex items-center space-x-6">
-            <div 
+            <div
               className="relative cursor-pointer transform hover:scale-110 transition-transform duration-200"
-              onClick={() => setShowCompanionDetails(!showCompanionDetails)}
+              onClick={() => onShowCompanion ? onShowCompanion() : setShowCompanionDetails(!showCompanionDetails)}
             >
               <div className="text-4xl animate-float">{companion.emoji}</div>
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-galaxy-green rounded-full animate-pulse"></div>
@@ -69,6 +70,17 @@ const GameHeader: React.FC<GameHeaderProps> = ({ starDust, companionEvolution })
               <span className="font-semibold text-star-yellow">{starDust.toLocaleString()}</span>
               <span className="text-xs text-gray-400">Star Dust</span>
             </div>
+
+            {/* Achievements Button */}
+            {onShowAchievements && (
+              <button
+                onClick={onShowAchievements}
+                className="p-2 rounded-full bg-slate-800/50 border border-slate-600 hover:bg-slate-700/50 transition-colors duration-200"
+                title="View Achievements"
+              >
+                <span className="text-lg">🏆</span>
+              </button>
+            )}
 
             {/* Settings Button */}
             <button className="p-2 rounded-full bg-slate-800/50 border border-slate-600 hover:bg-slate-700/50 transition-colors duration-200">
