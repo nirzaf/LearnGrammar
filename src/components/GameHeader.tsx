@@ -20,7 +20,8 @@ const GameHeader: React.FC<GameHeaderProps> = ({
   onShowAchievements,
   onShowCompanion,
   onShowTeacherDashboard,
-  onShowParentDashboard
+  onShowParentDashboard,
+  onShowAdaptiveLearning
 }) => {
   const [showCompanionDetails, setShowCompanionDetails] = useState(false)
 
@@ -89,6 +90,17 @@ const GameHeader: React.FC<GameHeaderProps> = ({
                 title="View Achievements"
               >
                 <span className="text-lg">🏆</span>
+              </button>
+            )}
+
+            {/* Adaptive Learning Button */}
+            {onShowAdaptiveLearning && (
+              <button
+                onClick={onShowAdaptiveLearning}
+                className="p-2 rounded-full bg-slate-800/50 border border-slate-600 hover:bg-slate-700/50 transition-colors duration-200"
+                title="Adaptive Learning Assistant"
+              >
+                <span className="text-lg">🧠</span>
               </button>
             )}
 

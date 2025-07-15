@@ -7,6 +7,7 @@ import AchievementNotification from './components/AchievementNotification'
 import CompanionModal from './components/CompanionModal'
 import TeacherDashboard from './components/TeacherDashboard'
 import ParentDashboard from './components/ParentDashboard'
+import AdaptiveLearningPanel from './components/AdaptiveLearningPanel'
 import { AchievementManager } from './services/achievementManager'
 import { AdaptiveLearningEngine } from './services/adaptiveLearning'
 import { calculateEvolutionLevel, getCompanionEvolution, companionMoods } from './data/companions'
@@ -55,6 +56,7 @@ function App() {
   // Dashboard state
   const [showTeacherDashboard, setShowTeacherDashboard] = useState(false)
   const [showParentDashboard, setShowParentDashboard] = useState(false)
+  const [showAdaptiveLearning, setShowAdaptiveLearning] = useState(false)
 
   // Initialize achievement manager and adaptive learning
   useEffect(() => {
@@ -150,6 +152,12 @@ function App() {
       ...prev,
       customizations
     }))
+  }
+
+  const handleAdaptiveRecommendationAction = (recommendation: any) => {
+    // Handle adaptive learning recommendations
+    console.log('Taking action on recommendation:', recommendation)
+    // In a real app, this would navigate to specific lessons or activities
   }
 
   // Mock data for dashboards (in a real app, this would come from a backend)
