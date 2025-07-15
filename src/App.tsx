@@ -8,6 +8,7 @@ import CompanionModal from './components/CompanionModal'
 import TeacherDashboard from './components/TeacherDashboard'
 import ParentDashboard from './components/ParentDashboard'
 import { AchievementManager } from './services/achievementManager'
+import { AdaptiveLearningEngine } from './services/adaptiveLearning'
 import { calculateEvolutionLevel, getCompanionEvolution, companionMoods } from './data/companions'
 import type { Planet, Achievement, CompanionState } from './types/game'
 

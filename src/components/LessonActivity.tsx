@@ -55,6 +55,10 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
     setShowFeedback(false)
     setIsCorrect(false)
     setActivityCompleted(false)
+    setHintsUsed(0)
+    setAttempts(0)
+    setActivityStartTime(new Date())
+    setAdaptiveHint('')
   }, [currentActivityIndex])
 
   /**
@@ -96,6 +100,8 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   }
 
   const handleSubmitAnswer = () => {
+    setAttempts(prev => prev + 1)
+
     let userResponse = ''
 
     switch (currentActivity.type) {
@@ -129,6 +135,23 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
     const correct = userResponse.toLowerCase() === correctAnswer
     setIsCorrect(correct)
     setShowFeedback(true)
+
+    // Record performance for adaptive learning
+    if (adaptiveLearning) {
+      const timeSpent = (new Date().getTime() - activityStartTime.getTime()) / 1000
+      const performance: StudentPerformance = {
+        lessonId: lesson.id,
+        activityId: currentActivity.id,
+        attempts: attempts + 1,
+        correctOnFirstTry: correct && attempts === 0,
+        timeSpent,
+        hintsUsed,
+        completedAt: new Date(),
+        difficulty: 'medium', // This could be dynamic based on adaptive difficulty
+        grammarConcept: lesson.grammarConcept
+      }
+      adaptiveLearning.recordPerformance(performance)
+    }
 
     if (correct) {
       setActivityCompleted(true)
@@ -519,19 +542,31 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
           
           <div className="space-x-4">
             {!showFeedback && (
-              <button
-                onClick={handleSubmitAnswer}
-                disabled={
-                  !userAnswer &&
-                  !selectedOption &&
-                  Object.keys(draggedItems).length === 0 &&
-                  Object.keys(matchedPairs).length === 0 &&
-                  storyAnswers.length === 0
-                }
-                className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Submit Answer
-              </button>
+              <>
+                {adaptiveLearning && (
+                  <button
+                    onClick={getAdaptiveHint}
+                    className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg font-medium transition-colors"
+                    title="Get a personalized hint"
+                  >
+                    💡 Hint ({hintsUsed})
+                  </button>
+                )}
+
+                <button
+                  onClick={handleSubmitAnswer}
+                  disabled={
+                    !userAnswer &&
+                    !selectedOption &&
+                    Object.keys(draggedItems).length === 0 &&
+                    Object.keys(matchedPairs).length === 0 &&
+                    storyAnswers.length === 0
+                  }
+                  className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Submit Answer
+                </button>
+              </>
             )}
             
             {showFeedback && isCorrect && (
