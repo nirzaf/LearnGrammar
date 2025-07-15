@@ -4,8 +4,12 @@ import PlanetView from './components/PlanetView.tsx'
 import GameHeader from './components/GameHeader'
 import AchievementModal from './components/AchievementModal'
 import AchievementNotification from './components/AchievementNotification'
+import CompanionModal from './components/CompanionModal'
+import TeacherDashboard from './components/TeacherDashboard'
+import ParentDashboard from './components/ParentDashboard'
 import { AchievementManager } from './services/achievementManager'
-import type { Planet, Achievement } from './types/game'
+import { calculateEvolutionLevel, getCompanionEvolution, companionMoods } from './data/companions'
+import type { Planet, Achievement, CompanionState } from './types/game'
 
 /**
  * Main App component for Grammar Galaxy Quest
@@ -24,11 +28,29 @@ function App() {
     completedPlanets: new Set<string>()
   })
 
+  const [companion, setCompanion] = useState<CompanionState>({
+    name: 'Grammar Buddy',
+    evolutionLevel: 0,
+    traits: ['Mysterious', 'Potential'],
+    mood: 'curious' as const,
+    customizations: {
+      color: 'default',
+      accessories: []
+    }
+  })
+
   // Achievement system state
   const achievementManagerRef = useRef<AchievementManager>()
   const [showAchievementModal, setShowAchievementModal] = useState(false)
   const [currentNotification, setCurrentNotification] = useState<Achievement | null>(null)
   const [achievements, setAchievements] = useState<Achievement[]>([])
+
+  // Companion system state
+  const [showCompanionModal, setShowCompanionModal] = useState(false)
+
+  // Dashboard state
+  const [showTeacherDashboard, setShowTeacherDashboard] = useState(false)
+  const [showParentDashboard, setShowParentDashboard] = useState(false)
 
   // Initialize achievement manager
   useEffect(() => {
@@ -77,6 +99,24 @@ function App() {
         completedLessons: new Set([...prev.completedLessons, lessonId])
       }
 
+      // Update companion evolution
+      const newEvolutionLevel = calculateEvolutionLevel({
+        completedLessons: newProgress.completedLessons.size,
+        completedPlanets: newProgress.completedPlanets.size,
+        achievements: achievements.filter(a => a.isUnlocked).length,
+        starDust: newProgress.starDust
+      })
+
+      if (newEvolutionLevel > companion.evolutionLevel) {
+        const newEvolution = getCompanionEvolution(newEvolutionLevel)
+        setCompanion(prev => ({
+          ...prev,
+          evolutionLevel: newEvolutionLevel,
+          traits: newEvolution.traits,
+          mood: 'excited' as const
+        }))
+      }
+
       // Check achievements after updating progress
       if (achievementManagerRef.current) {
         const newlyUnlocked = achievementManagerRef.current.checkAchievements({
@@ -98,12 +138,72 @@ function App() {
     })
   }
 
+  const handleCompanionCustomization = (customizations: CompanionState['customizations']) => {
+    setCompanion(prev => ({
+      ...prev,
+      customizations
+    }))
+  }
+
+  // Mock data for dashboards (in a real app, this would come from a backend)
+  const mockStudentData = [
+    {
+      id: '1',
+      name: 'Alice Johnson',
+      completedLessons: 15,
+      totalLessons: 50,
+      starDust: 750,
+      achievements: achievements.filter(a => a.isUnlocked).slice(0, 3),
+      currentStreak: 5,
+      timeSpent: 120,
+      lastActive: new Date(Date.now() - 1000 * 60 * 60 * 24), // 1 day ago
+      strengths: ['Nouns', 'Adjectives'],
+      needsSupport: ['Verb Agreement', 'Punctuation'],
+      completedPlanets: ['planet-core'],
+      currentPlanet: 'planet-signpost'
+    },
+    {
+      id: '2',
+      name: 'Bob Smith',
+      completedLessons: 8,
+      totalLessons: 50,
+      starDust: 400,
+      achievements: achievements.filter(a => a.isUnlocked).slice(0, 1),
+      currentStreak: 2,
+      timeSpent: 80,
+      lastActive: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3), // 3 days ago
+      strengths: ['Pronouns'],
+      needsSupport: ['Nouns', 'Verb Tenses'],
+      completedPlanets: [],
+      currentPlanet: 'planet-core'
+    }
+  ]
+
+  const mockChildData = {
+    id: '1',
+    name: 'Your Child',
+    completedLessons: playerProgress.completedLessons.size,
+    totalLessons: 50,
+    starDust: playerProgress.starDust,
+    achievements: achievements.filter(a => a.isUnlocked),
+    currentStreak: playerProgress.streakCount,
+    timeSpent: playerProgress.timeSpent,
+    lastActive: new Date(),
+    strengths: ['Nouns', 'Adjectives'],
+    needsSupport: ['Verb Agreement', 'Punctuation'],
+    completedPlanets: Array.from(playerProgress.completedPlanets),
+    currentPlanet: 'planet-core',
+    weeklyGoal: 5,
+    weeklyProgress: 3
+  }
+
   return (
     <div className="min-h-screen w-full bg-space-blue bg-stars">
       <GameHeader
         starDust={playerProgress.starDust}
-        companionEvolution={playerProgress.companionEvolution}
+        companionEvolution={companion.evolutionLevel}
         onShowAchievements={() => setShowAchievementModal(true)}
+        onShowCompanion={() => setShowCompanionModal(true)}
       />
 
       <main className="w-full">
@@ -134,6 +234,20 @@ function App() {
       <AchievementNotification
         achievement={currentNotification}
         onClose={() => setCurrentNotification(null)}
+      />
+
+      {/* Companion Modal */}
+      <CompanionModal
+        companion={companion}
+        isVisible={showCompanionModal}
+        onClose={() => setShowCompanionModal(false)}
+        onCustomizationChange={handleCompanionCustomization}
+        playerProgress={{
+          completedLessons: playerProgress.completedLessons.size,
+          completedPlanets: playerProgress.completedPlanets.size,
+          achievements: achievements.filter(a => a.isUnlocked).length,
+          starDust: playerProgress.starDust
+        }}
       />
     </div>
   )

@@ -5,13 +5,22 @@ interface GameHeaderProps {
   companionEvolution: number
   onShowAchievements?: () => void
   onShowCompanion?: () => void
+  onShowTeacherDashboard?: () => void
+  onShowParentDashboard?: () => void
 }
 
 /**
  * Game header component displaying player stats, companion, and navigation
  * Shows star dust currency, companion status, and game controls
  */
-const GameHeader: React.FC<GameHeaderProps> = ({ starDust, companionEvolution, onShowAchievements, onShowCompanion }) => {
+const GameHeader: React.FC<GameHeaderProps> = ({
+  starDust,
+  companionEvolution,
+  onShowAchievements,
+  onShowCompanion,
+  onShowTeacherDashboard,
+  onShowParentDashboard
+}) => {
   const [showCompanionDetails, setShowCompanionDetails] = useState(false)
 
   /**
@@ -79,6 +88,28 @@ const GameHeader: React.FC<GameHeaderProps> = ({ starDust, companionEvolution, o
                 title="View Achievements"
               >
                 <span className="text-lg">🏆</span>
+              </button>
+            )}
+
+            {/* Teacher Dashboard Button */}
+            {onShowTeacherDashboard && (
+              <button
+                onClick={onShowTeacherDashboard}
+                className="p-2 rounded-full bg-slate-800/50 border border-slate-600 hover:bg-slate-700/50 transition-colors duration-200"
+                title="Teacher Dashboard"
+              >
+                <span className="text-lg">👩‍🏫</span>
+              </button>
+            )}
+
+            {/* Parent Dashboard Button */}
+            {onShowParentDashboard && (
+              <button
+                onClick={onShowParentDashboard}
+                className="p-2 rounded-full bg-slate-800/50 border border-slate-600 hover:bg-slate-700/50 transition-colors duration-200"
+                title="Parent Dashboard"
+              >
+                <span className="text-lg">👨‍👩‍👧‍👦</span>
               </button>
             )}
 
