@@ -1859,27 +1859,352 @@ export const planetsData: Planet[] = [
     lessons: [
       {
         id: 'connector-lesson-1',
-        title: 'Bridge the Gap: Linking Sentences',
-        description: 'Build bridges between floating islands using conjunctions',
-        type: 'practice',
-        grammarConcept: 'Conjunctions (and, but, or, because)',
+        title: 'Sentence Island Review - Revising Sentences',
+        description: 'Construct complete sentences on floating islands',
+        type: 'lesson',
+        grammarConcept: 'Complete Sentences',
         rewardStarDust: 50,
         isCompleted: false,
         isUnlocked: true,
         activities: [
           {
-            id: 'bridge-gap-1',
+            id: 'island-inspector',
             type: 'multiple-choice',
-            title: 'Bridge Builder',
-            instructions: 'Choose the right building material to construct a safe bridge!',
+            title: 'Island Inspector',
+            instructions: 'Identify complete sentences on sentence islands!',
             content: {
-              sentence: 'I wanted to play outside ___ it was raining.',
-              options: ['and', 'but', 'or', 'because']
+              sentence: 'Which is a complete sentence?',
+              options: ['The brave knight.', 'Fought the dragon.', 'The brave knight fought the dragon.', 'Brave knight dragon.']
+            },
+            correctAnswer: 'The brave knight fought the dragon.',
+            feedback: {
+              correct: 'Island approved! This sentence can stand alone!',
+              incorrect: 'Island unstable! A complete sentence needs subject and verb!'
+            }
+          },
+          {
+            id: 'sentence-architect',
+            type: 'story-builder',
+            title: 'Sentence Architect',
+            instructions: 'Build strong, complete sentences!',
+            content: {
+              story: '___ ___ in the garden.',
+              blanks: 2,
+              options: ['The flowers', 'bloom', 'beautiful', 'very', 'in', 'garden']
+            },
+            correctAnswer: ['The flowers', 'bloom'],
+            feedback: {
+              correct: 'Architectural masterpiece! Strong sentence foundation!',
+              incorrect: 'Foundation weak! Need subject and verb!'
+            }
+          },
+          {
+            id: 'bridge-engineer',
+            type: 'drag-drop',
+            title: 'Bridge Engineer',
+            instructions: 'Prepare sentences for connection!',
+            content: {
+              words: ['Birds fly.', 'Very fast.', 'The sun shines.', 'In the sky.'],
+              categories: ['Complete Sentences', 'Sentence Fragments']
+            },
+            correctAnswer: ['Birds fly.:Complete Sentences', 'The sun shines.:Complete Sentences', 'Very fast.:Sentence Fragments', 'In the sky.:Sentence Fragments'],
+            feedback: {
+              correct: 'Engineering success! Sentences ready for bridging!',
+              incorrect: 'Engineering error! Check for complete thoughts!'
+            }
+          },
+          {
+            id: 'sentence-lifeguard',
+            type: 'multiple-choice',
+            title: 'Sentence Lifeguard',
+            instructions: 'Rescue incomplete sentences!',
+            content: {
+              sentence: 'How can you rescue "Running in the park"?',
+              options: ['Add "The dog is"', 'Add "very fast"', 'Add "and jumping"', 'Add "in the morning"']
+            },
+            correctAnswer: 'Add "The dog is"',
+            feedback: {
+              correct: 'Rescue successful! Sentence is now complete!',
+              incorrect: 'Rescue failed! Need to add a subject!'
+            }
+          },
+          {
+            id: 'island-developer',
+            type: 'typing',
+            title: 'Island Developer',
+            instructions: 'Create communities of complete sentences!',
+            content: {
+              question: 'Write a complete sentence about cats.',
+              sentence: 'Your sentence: ___'
+            },
+            correctAnswer: 'Cats sleep.',
+            feedback: {
+              correct: 'Development approved! Perfect sentence community!',
+              incorrect: 'Development rejected! Make sure it\'s a complete sentence!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'connector-lesson-2',
+        title: 'Conjunction Connectors - Understanding "and," "but," "because"',
+        description: 'Use conjunctions to build bridges between sentence islands',
+        type: 'lesson',
+        grammarConcept: 'Conjunctions (and, but, because)',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'bridge-constructor',
+            type: 'multiple-choice',
+            title: 'Bridge Constructor',
+            instructions: 'Build bridges using appropriate conjunctions!',
+            content: {
+              sentence: 'I like pizza ___ I don\'t like mushrooms.',
+              options: ['and', 'but', 'because', 'or']
             },
             correctAnswer: 'but',
             feedback: {
-              correct: 'Perfect! Your Grammarnaut crosses safely!',
-              incorrect: 'The bridge wobbles! Your Grammarnaut parachutes down to try again!'
+              correct: 'Strong bridge built! Ideas connected perfectly!',
+              incorrect: 'Bridge collapsed! Try a conjunction that shows contrast!'
+            }
+          },
+          {
+            id: 'connection-specialist',
+            type: 'drag-drop',
+            title: 'Connection Specialist',
+            instructions: 'Choose the best conjunction for each connection!',
+            content: {
+              words: ['I studied hard and passed the test', 'I studied hard but failed the test', 'I studied hard because the test was important'],
+              categories: ['Addition (and)', 'Contrast (but)', 'Reason (because)']
+            },
+            correctAnswer: ['I studied hard and passed the test:Addition (and)', 'I studied hard but failed the test:Contrast (but)', 'I studied hard because the test was important:Reason (because)'],
+            feedback: {
+              correct: 'Connection expertise achieved! Perfect relationships!',
+              incorrect: 'Connection confusion! Check the relationship between ideas!'
+            }
+          },
+          {
+            id: 'relationship-counselor',
+            type: 'story-builder',
+            title: 'Relationship Counselor',
+            instructions: 'Help sentences work together with conjunctions!',
+            content: {
+              story: 'The weather was cold ___ we wore warm coats ___ we stayed comfortable.',
+              blanks: 2,
+              options: ['and', 'but', 'because', 'so']
+            },
+            correctAnswer: ['so', 'and'],
+            feedback: {
+              correct: 'Relationship harmony! Sentences work together perfectly!',
+              incorrect: 'Relationship problems! Check the logical connections!'
+            }
+          },
+          {
+            id: 'bridge-inspector',
+            type: 'multiple-choice',
+            title: 'Bridge Inspector',
+            instructions: 'Ensure conjunctions create proper connections!',
+            content: {
+              sentence: 'She wanted to go swimming ___ the pool was closed.',
+              options: ['and', 'but', 'because', 'or']
+            },
+            correctAnswer: 'but',
+            feedback: {
+              correct: 'Bridge inspection passed! Safe connection approved!',
+              incorrect: 'Bridge safety concern! This shows contrast!'
+            }
+          },
+          {
+            id: 'connection-designer',
+            type: 'typing',
+            title: 'Connection Designer',
+            instructions: 'Design complex sentence networks!',
+            content: {
+              question: 'Connect these ideas: "It was raining" and "we stayed inside"',
+              sentence: 'Connected sentence: It was raining ___ we stayed inside.'
+            },
+            correctAnswer: 'so',
+            feedback: {
+              correct: 'Design masterpiece! Perfect logical connection!',
+              incorrect: 'Design flaw! Show the cause and effect relationship!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'connector-lesson-3',
+        title: 'Conjunction Chooser - Selecting "and," "but," "or," "because"',
+        description: 'Master the art of choosing the perfect conjunction',
+        type: 'lesson',
+        grammarConcept: 'Conjunction Selection',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'conjunction-expert',
+            type: 'multiple-choice',
+            title: 'Conjunction Expert',
+            instructions: 'Choose the perfect conjunction for each situation!',
+            content: {
+              sentence: 'Would you like tea ___ coffee?',
+              options: ['and', 'but', 'or', 'because']
+            },
+            correctAnswer: 'or',
+            feedback: {
+              correct: 'Expert choice! Perfect for showing options!',
+              incorrect: 'Expert consultation needed! This offers a choice!'
+            }
+          },
+          {
+            id: 'connection-consultant',
+            type: 'story-builder',
+            title: 'Connection Consultant',
+            instructions: 'Advise on conjunction selection!',
+            content: {
+              story: 'I wanted to buy the book ___ it was expensive ___ I decided to borrow it from the library.',
+              blanks: 2,
+              options: ['and', 'but', 'or', 'because', 'so']
+            },
+            correctAnswer: ['but', 'so'],
+            feedback: {
+              correct: 'Consultation successful! Perfect conjunction advice!',
+              incorrect: 'Consultation needed! Check the logical flow!'
+            }
+          },
+          {
+            id: 'sentence-mediator',
+            type: 'drag-drop',
+            title: 'Sentence Mediator',
+            instructions: 'Help sentences connect appropriately!',
+            content: {
+              words: ['I like cats and dogs', 'I like cats but not dogs', 'I like cats or dogs', 'I like cats because they purr'],
+              categories: ['Addition', 'Contrast', 'Choice', 'Reason']
+            },
+            correctAnswer: ['I like cats and dogs:Addition', 'I like cats but not dogs:Contrast', 'I like cats or dogs:Choice', 'I like cats because they purr:Reason'],
+            feedback: {
+              correct: 'Mediation successful! All sentences connected properly!',
+              incorrect: 'Mediation needed! Check the relationship types!'
+            }
+          },
+          {
+            id: 'bridge-planner',
+            type: 'multiple-choice',
+            title: 'Bridge Planner',
+            instructions: 'Plan conjunction usage for complex connections!',
+            content: {
+              sentence: 'The movie was long ___ boring ___ we left early.',
+              options: ['and, so', 'but, and', 'or, because', 'because, but']
+            },
+            correctAnswer: 'and, so',
+            feedback: {
+              correct: 'Planning perfection! Complex bridge designed beautifully!',
+              incorrect: 'Planning revision needed! Think about the logical sequence!'
+            }
+          },
+          {
+            id: 'connection-critic',
+            type: 'typing',
+            title: 'Connection Critic',
+            instructions: 'Evaluate conjunction choices in writing!',
+            content: {
+              question: 'Fix this sentence: "I was tired and I went to bed early."',
+              sentence: 'Better version: I was tired ___ I went to bed early.'
+            },
+            correctAnswer: 'so',
+            feedback: {
+              correct: 'Critical analysis perfect! Much better connection!',
+              incorrect: 'Critical review needed! Show cause and effect!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'connector-lesson-4',
+        title: 'Master Bridge Builder - Linking Sentences with Conjunctions',
+        description: 'Achieve mastery in creating sophisticated sentence connections',
+        type: 'lesson',
+        grammarConcept: 'Advanced Conjunction Usage',
+        rewardStarDust: 75,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'master-builder',
+            type: 'story-builder',
+            title: 'Master Builder',
+            instructions: 'Create complex sentence connections!',
+            content: {
+              story: 'The storm was approaching ___ the sailors secured the ship ___ they knew it would be dangerous ___ they were prepared.',
+              blanks: 3,
+              options: ['and', 'but', 'or', 'because', 'so', 'although']
+            },
+            correctAnswer: ['so', 'because', 'but'],
+            feedback: {
+              correct: 'Master builder status achieved! Complex connections mastered!',
+              incorrect: 'More building practice needed! Check the logical flow!'
+            }
+          },
+          {
+            id: 'connection-virtuoso',
+            type: 'multiple-choice',
+            title: 'Connection Virtuoso',
+            instructions: 'Demonstrate advanced conjunction skills!',
+            content: {
+              sentence: 'The concert was cancelled ___ the lead singer was sick, ___ the fans were disappointed.',
+              options: ['because, and', 'and, but', 'or, because', 'but, or']
+            },
+            correctAnswer: 'because, and',
+            feedback: {
+              correct: 'Virtuoso performance! Masterful conjunction usage!',
+              incorrect: 'More practice needed! Think about cause and addition!'
+            }
+          },
+          {
+            id: 'bridge-master',
+            type: 'drag-drop',
+            title: 'Bridge Master',
+            instructions: 'Build elaborate sentence networks!',
+            content: {
+              words: ['Simple connection', 'Complex connection', 'I ran and jumped', 'I ran because I was late, but I still missed the bus'],
+              categories: ['Simple', 'Complex']
+            },
+            correctAnswer: ['I ran and jumped:Simple', 'Simple connection:Simple', 'I ran because I was late, but I still missed the bus:Complex', 'Complex connection:Complex'],
+            feedback: {
+              correct: 'Bridge mastery achieved! Network construction perfect!',
+              incorrect: 'Bridge engineering needs work! Check complexity levels!'
+            }
+          },
+          {
+            id: 'connection-teacher',
+            type: 'multiple-choice',
+            title: 'Connection Teacher',
+            instructions: 'Teach others about conjunction usage!',
+            content: {
+              sentence: 'Which sentence shows the best conjunction usage?',
+              options: ['I like pizza and I like pasta and I like salad.', 'I like pizza, pasta, and salad.', 'I like pizza but pasta but salad.', 'I like pizza or pasta or salad or something.']
+            },
+            correctAnswer: 'I like pizza, pasta, and salad.',
+            feedback: {
+              correct: 'Teaching excellence! Perfect example chosen!',
+              incorrect: 'Teaching moment! Show the most efficient connection!'
+            }
+          },
+          {
+            id: 'master-architect',
+            type: 'typing',
+            title: 'Master Architect',
+            instructions: 'Design masterful sentence structures!',
+            content: {
+              question: 'Create a complex sentence using "although" and "because"',
+              sentence: 'Masterful sentence: ___'
+            },
+            correctAnswer: 'Although it was raining, we went hiking because we love nature.',
+            feedback: {
+              correct: 'Architectural masterpiece! Complex structure perfected!',
+              incorrect: 'Architectural revision needed! Use both conjunctions effectively!'
             }
           }
         ]
@@ -1898,55 +2223,176 @@ export const planetsData: Planet[] = [
     lessons: [
       {
         id: 'palace-lesson-1',
-        title: 'Holo-Communicator: Punctuating Speech',
-        description: 'Help aliens communicate clearly by adding punctuation gems',
-        type: 'practice',
-        grammarConcept: 'Punctuating Speech',
+        title: 'Capital Letters & Full Stops Roller Coaster',
+        description: 'Navigate sentences with proper capitalization and periods',
+        type: 'lesson',
+        grammarConcept: 'Capitalization and Periods',
         rewardStarDust: 50,
         isCompleted: false,
         isUnlocked: true,
         activities: [
           {
-            id: 'holo-comm-1',
-            type: 'drag-drop',
-            title: 'Gem Placement',
-            instructions: 'Drag the correct punctuation gems to complete the alien\'s message!',
+            id: 'roller-coaster-operator',
+            type: 'multiple-choice',
+            title: 'Roller Coaster Operator',
+            instructions: 'Ensure safe sentence rides with proper punctuation!',
             content: {
-              sentence: 'Hello said the alien How are you today',
-              words: ['"', 'Hello', ',', '"', 'said', 'the', 'alien', '.', '"', 'How', 'are', 'you', 'today', '?', '"'],
-              categories: ['Quotation', 'Word', 'Comma', 'Period', 'Question']
+              sentence: 'Which sentence is correctly punctuated?',
+              options: ['the dog ran fast', 'The dog ran fast.', 'the dog ran fast.', 'The dog ran fast']
             },
-            correctAnswer: ['"Hello," said the alien. "How are you today?"'],
+            correctAnswer: 'The dog ran fast.',
             feedback: {
-              correct: 'Perfect! The alien gives a happy cheer and the transmission ends!',
-              incorrect: 'The message is unclear! Try placing the gems differently.'
+              correct: 'Safe ride! Perfect capitalization and punctuation!',
+              incorrect: 'Safety hazard! Check capitalization and end punctuation!'
+            }
+          },
+          {
+            id: 'capital-letter-collector',
+            type: 'drag-drop',
+            title: 'Capital Letter Collector',
+            instructions: 'Gather capitals for sentence beginnings!',
+            content: {
+              words: ['The', 'cat', 'Sleeps', 'on', 'The', 'mat'],
+              categories: ['Needs Capital', 'Lowercase']
+            },
+            correctAnswer: ['The:Needs Capital', 'Sleeps:Needs Capital', 'cat:Lowercase', 'on:Lowercase', 'mat:Lowercase'],
+            feedback: {
+              correct: 'Collection complete! All capitals in the right places!',
+              incorrect: 'Collection error! Only sentence beginnings need capitals!'
+            }
+          },
+          {
+            id: 'full-stop-detective',
+            type: 'story-builder',
+            title: 'Full Stop Detective',
+            instructions: 'Find where sentences should end!',
+            content: {
+              story: 'The sun is shining ___ The birds are singing ___ It is a beautiful day ___',
+              blanks: 3,
+              options: ['.', '!', '?', ',']
+            },
+            correctAnswer: ['.', '.', '.'],
+            feedback: {
+              correct: 'Detective work complete! All sentences properly ended!',
+              incorrect: 'Investigation continues! Statements need periods!'
+            }
+          },
+          {
+            id: 'sentence-racer',
+            type: 'multiple-choice',
+            title: 'Sentence Racer',
+            instructions: 'Race through sentences with correct punctuation!',
+            content: {
+              sentence: 'Fix this sentence: "my friend likes ice cream"',
+              options: ['My friend likes ice cream.', 'my friend likes ice cream.', 'My Friend Likes Ice Cream.', 'my friend likes ice cream']
+            },
+            correctAnswer: 'My friend likes ice cream.',
+            feedback: {
+              correct: 'Race won! Perfect punctuation speed!',
+              incorrect: 'Slow down! Check capitalization and end punctuation!'
+            }
+          },
+          {
+            id: 'park-safety-inspector',
+            type: 'typing',
+            title: 'Park Safety Inspector',
+            instructions: 'Ensure all sentences are properly punctuated!',
+            content: {
+              question: 'Write a properly punctuated sentence about your favorite animal.',
+              sentence: 'Your sentence: ___'
+            },
+            correctAnswer: 'Dogs are loyal pets.',
+            feedback: {
+              correct: 'Safety inspection passed! Perfect sentence construction!',
+              incorrect: 'Safety violation! Remember capital letter and period!'
             }
           }
         ]
       },
       {
         id: 'palace-lesson-2',
-        title: 'Word Fusion Chamber: Contractions',
-        description: 'Fuse words together and place apostrophe gems correctly',
+        title: 'Question & Exclamation Express',
+        description: 'Experience exciting questions and exclamations',
         type: 'lesson',
-        grammarConcept: 'Contractions',
+        grammarConcept: 'Question Marks and Exclamation Points',
         rewardStarDust: 50,
         isCompleted: false,
         isUnlocked: true,
         activities: [
           {
-            id: 'fusion-chamber-1',
+            id: 'question-master',
             type: 'multiple-choice',
-            title: 'Word Fusion',
-            instructions: 'Fuse the words and place the apostrophe gem correctly!',
+            title: 'Question Master',
+            instructions: 'Create and punctuate various question types!',
             content: {
-              sentence: 'do + not = ?',
-              options: ['dont', 'do\'nt', 'don\'t', 'do not']
+              sentence: 'What punctuation mark goes here: "How are you today___"',
+              options: ['.', '!', '?', ',']
             },
-            correctAnswer: 'don\'t',
+            correctAnswer: '?',
             feedback: {
-              correct: 'FUSION COMPLETE! The apostrophe gem glows brightly!',
-              incorrect: 'Fusion failed! The chamber needs recalibration.'
+              correct: 'Question mastery achieved! Perfect inquiry punctuation!',
+              incorrect: 'Question confusion! Questions need question marks!'
+            }
+          },
+          {
+            id: 'excitement-engineer',
+            type: 'drag-drop',
+            title: 'Excitement Engineer',
+            instructions: 'Design thrilling exclamations!',
+            content: {
+              words: ['Wow, that\'s amazing!', 'What time is it?', 'I love pizza!', 'Where are you going?'],
+              categories: ['Exclamations', 'Questions']
+            },
+            correctAnswer: ['Wow, that\'s amazing!:Exclamations', 'I love pizza!:Exclamations', 'What time is it?:Questions', 'Where are you going?:Questions'],
+            feedback: {
+              correct: 'Engineering success! Perfect excitement and inquiry design!',
+              incorrect: 'Engineering error! Check the sentence types!'
+            }
+          },
+          {
+            id: 'mood-detector',
+            type: 'story-builder',
+            title: 'Mood Detector',
+            instructions: 'Identify appropriate punctuation for emotions!',
+            content: {
+              story: 'Help___ I\'m stuck___ Can you hear me___ This is terrible___',
+              blanks: 4,
+              options: ['!', '?', '.', ',']
+            },
+            correctAnswer: ['!', '!', '?', '!'],
+            feedback: {
+              correct: 'Mood detection perfect! All emotions properly punctuated!',
+              incorrect: 'Mood confusion! Match punctuation to emotion level!'
+            }
+          },
+          {
+            id: 'carnival-announcer',
+            type: 'multiple-choice',
+            title: 'Carnival Announcer',
+            instructions: 'Use questions and exclamations in announcements!',
+            content: {
+              sentence: 'Which announcement is correctly punctuated?',
+              options: ['Step right up. Try your luck.', 'Step right up! Try your luck!', 'Step right up? Try your luck?', 'Step right up, Try your luck,']
+            },
+            correctAnswer: 'Step right up! Try your luck!',
+            feedback: {
+              correct: 'Announcement approved! Perfect carnival excitement!',
+              incorrect: 'Announcement needs work! Carnival calls need excitement!'
+            }
+          },
+          {
+            id: 'punctuation-performer',
+            type: 'typing',
+            title: 'Punctuation Performer',
+            instructions: 'Act out different punctuation marks!',
+            content: {
+              question: 'Write an exciting sentence about winning a prize.',
+              sentence: 'Your exciting sentence: ___'
+            },
+            correctAnswer: 'I won first place!',
+            feedback: {
+              correct: 'Performance outstanding! Perfect exclamation energy!',
+              incorrect: 'Performance needs more excitement! Use an exclamation mark!'
             }
           }
         ]
