@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import GalaxyMap from './components/GalaxyMap'
-import PlanetView from './components/PlanetView'
+import GalaxyMap from './components/GalaxyMap.tsx'
+import PlanetView from './components/PlanetView.tsx'
 import GameHeader from './components/GameHeader'
-import { Planet } from './types/game'
+import type { Planet } from './types/game'
 
 /**
  * Main App component for Grammar Galaxy Quest

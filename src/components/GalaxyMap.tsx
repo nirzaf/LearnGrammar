@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Planet } from '../types/game'
+import type { Planet } from '../types/game'
 import { planetsData } from '../data/planets'
 
 interface GalaxyMapProps {
