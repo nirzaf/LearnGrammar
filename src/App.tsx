@@ -222,6 +222,7 @@ function App() {
             onBack={handleBackToGalaxy}
             onProgressUpdate={handleProgressUpdate}
             completedLessons={playerProgress.completedLessons}
+            adaptiveLearning={adaptiveLearningRef.current}
           />
         ) : (
           <GalaxyMap
