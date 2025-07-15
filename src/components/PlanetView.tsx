@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import type { Planet, Lesson } from '../types/game'
 import LessonActivity from './LessonActivity'
+import { AdaptiveLearningEngine } from '../services/adaptiveLearning'
 
 interface PlanetViewProps {
   planet: Planet
   onBack: () => void
   onProgressUpdate: (lessonId: string, starDustEarned: number) => void
   completedLessons: Set<string>
+  adaptiveLearning?: AdaptiveLearningEngine
 }
 
 /**
