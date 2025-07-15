@@ -7,6 +7,7 @@ interface GameHeaderProps {
   onShowCompanion?: () => void
   onShowTeacherDashboard?: () => void
   onShowParentDashboard?: () => void
+  onShowAdaptiveLearning?: () => void
 }
 
 /**
