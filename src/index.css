@@ -1,7 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
-@reference "tailwindcss";
+
+@theme {
+  --color-space-blue: #0B1426;
+  --color-cosmic-purple: #6B46C1;
+  --color-star-yellow: #FCD34D;
+  --color-nebula-pink: #EC4899;
+  --color-galaxy-green: #10B981;
+  --color-asteroid-gray: #6B7280;
+
+  --font-family-space: Orbitron, monospace;
+  --font-family-cosmic: "Space Grotesk", sans-serif;
+
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-twinkle: twinkle 2s ease-in-out infinite alternate;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
 
 @layer base {
   * {
