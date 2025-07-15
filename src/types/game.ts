@@ -29,7 +29,7 @@ export interface Lesson {
 
 export interface Activity {
   id: string
-  type: 'drag-drop' | 'multiple-choice' | 'typing' | 'matching' | 'story-builder'
+  type: 'drag-drop' | 'multiple-choice' | 'typing' | 'matching' | 'story-builder' | 'sentence-builder'
   title: string
   instructions: string
   content: ActivityContent

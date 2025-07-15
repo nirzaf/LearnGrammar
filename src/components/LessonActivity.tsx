@@ -20,6 +20,8 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   const [userAnswer, setUserAnswer] = useState<string>('')
   const [selectedOption, setSelectedOption] = useState<string>('')
   const [draggedItems, setDraggedItems] = useState<{[key: string]: string}>({})
+  const [matchedPairs, setMatchedPairs] = useState<{[key: string]: string}>({})
+  const [storyAnswers, setStoryAnswers] = useState<string[]>([])
   const [showFeedback, setShowFeedback] = useState(false)
   const [isCorrect, setIsCorrect] = useState(false)
   const [activityCompleted, setActivityCompleted] = useState(false)
@@ -35,6 +37,8 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
     setUserAnswer('')
     setSelectedOption('')
     setDraggedItems({})
+    setMatchedPairs({})
+    setStoryAnswers([])
     setShowFeedback(false)
     setIsCorrect(false)
     setActivityCompleted(false)
@@ -53,7 +57,7 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
    */
   const handleSubmitAnswer = () => {
     let userResponse = ''
-    
+
     switch (currentActivity.type) {
       case 'multiple-choice':
         userResponse = selectedOption
@@ -66,18 +70,26 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
           .map(([item, category]) => `${item}:${category}`)
           .join(', ')
         break
+      case 'matching':
+        userResponse = Object.entries(matchedPairs)
+          .map(([item, match]) => `${item}:${match}`)
+          .join(', ')
+        break
+      case 'story-builder':
+        userResponse = storyAnswers.join(', ')
+        break
       default:
         userResponse = userAnswer
     }
-    
-    const correctAnswer = Array.isArray(currentActivity.correctAnswer) 
+
+    const correctAnswer = Array.isArray(currentActivity.correctAnswer)
       ? currentActivity.correctAnswer.join(', ').toLowerCase()
       : currentActivity.correctAnswer.toLowerCase()
-    
+
     const correct = userResponse.toLowerCase() === correctAnswer
     setIsCorrect(correct)
     setShowFeedback(true)
-    
+
     if (correct) {
       setActivityCompleted(true)
     }
@@ -231,7 +243,123 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
             </div>
           </div>
         )
-        
+
+      case 'matching':
+        return (
+          <div className="space-y-6">
+            {/* Instructions */}
+            <div className="card bg-slate-700/50">
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {currentActivity.instructions}
+              </h3>
+            </div>
+
+            {/* Items to Match */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="card">
+                <h4 className="text-lg font-semibold text-white mb-4">Items</h4>
+                <div className="space-y-2">
+                  {currentActivity.content.words?.map((word, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        const category = currentActivity.content.categories?.[index]
+                        if (category) {
+                          setMatchedPairs(prev => ({ ...prev, [word]: category }))
+                        }
+                      }}
+                      className={`w-full p-3 rounded-lg border-2 transition-all duration-200 ${
+                        matchedPairs[word]
+                          ? 'border-cosmic-purple bg-cosmic-purple/20 text-white'
+                          : 'border-slate-600 bg-slate-800/50 text-gray-300 hover:border-slate-500'
+                      }`}
+                    >
+                      {word} {matchedPairs[word] && `→ ${matchedPairs[word]}`}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="card">
+                <h4 className="text-lg font-semibold text-white mb-4">Categories</h4>
+                <div className="space-y-2">
+                  {currentActivity.content.categories?.map((category, index) => (
+                    <div
+                      key={index}
+                      className="p-3 bg-slate-700 rounded-lg text-white border border-slate-600"
+                    >
+                      {category}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'story-builder':
+        return (
+          <div className="space-y-6">
+            {/* Story Template */}
+            <div className="card bg-slate-700/50">
+              <h3 className="text-xl font-semibold text-white mb-4">
+                Complete the Story
+              </h3>
+              <p className="text-gray-300 text-lg">
+                {currentActivity.content.story}
+              </p>
+            </div>
+
+            {/* Word Options */}
+            <div className="card">
+              <h4 className="text-lg font-semibold text-white mb-4">Choose words to fill the blanks:</h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {currentActivity.content.options?.map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      if (storyAnswers.length < (currentActivity.content.blanks || 0)) {
+                        setStoryAnswers(prev => [...prev, option])
+                      }
+                    }}
+                    disabled={storyAnswers.includes(option)}
+                    className={`p-3 rounded-lg border-2 transition-all duration-200 ${
+                      storyAnswers.includes(option)
+                        ? 'border-cosmic-purple bg-cosmic-purple/20 text-white opacity-50'
+                        : 'border-slate-600 bg-slate-800/50 text-gray-300 hover:border-slate-500'
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Selected Words */}
+            {storyAnswers.length > 0 && (
+              <div className="card">
+                <h4 className="text-lg font-semibold text-white mb-4">Your choices:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {storyAnswers.map((answer, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-cosmic-purple rounded-full text-white text-sm"
+                    >
+                      {index + 1}. {answer}
+                    </span>
+                  ))}
+                </div>
+                <button
+                  onClick={() => setStoryAnswers([])}
+                  className="mt-3 text-sm text-gray-400 hover:text-white"
+                >
+                  Clear all
+                </button>
+              </div>
+            )}
+          </div>
+        )
+
       default:
         return (
           <div className="card">
@@ -335,6 +463,8 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
                   setUserAnswer('')
                   setSelectedOption('')
                   setDraggedItems({})
+                  setMatchedPairs({})
+                  setStoryAnswers([])
                 }}
                 className="btn-secondary"
               >
@@ -347,7 +477,13 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
             {!showFeedback && (
               <button
                 onClick={handleSubmitAnswer}
-                disabled={!userAnswer && !selectedOption && Object.keys(draggedItems).length === 0}
+                disabled={
+                  !userAnswer &&
+                  !selectedOption &&
+                  Object.keys(draggedItems).length === 0 &&
+                  Object.keys(matchedPairs).length === 0 &&
+                  storyAnswers.length === 0
+                }
                 className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Submit Answer
