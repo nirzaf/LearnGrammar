@@ -105,6 +105,7 @@ const PlanetView: React.FC<PlanetViewProps> = ({
         planet={planet}
         onBack={handleLessonBack}
         onComplete={handleLessonComplete}
+        adaptiveLearning={adaptiveLearning}
       />
     )
   }
