@@ -2,7 +2,7 @@
 
 This document provides a highly detailed and innovative project plan for a React-based educational game. It builds upon the "Grammar Galaxy" concept by introducing a richer narrative, more dynamic gameplay mechanics, and deeper engagement loops to create a truly fun and memorable learning adventure.
 
-### **Overall Concept: The Grammarnaut's Quest**
+## **Overall Concept: The Grammarnaut's Quest
 
 A mischievous black hole, the **Great Void**, has scrambled the "Language Power" across the galaxy, leaving planets dull and lifeless. The user, a new **"Grammarnaut,"** must travel the galaxy with their robot co-pilot, **Lexi**, to restore this power.
 
