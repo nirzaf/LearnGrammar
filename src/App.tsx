@@ -46,6 +46,9 @@ function App() {
   const [currentNotification, setCurrentNotification] = useState<Achievement | null>(null)
   const [achievements, setAchievements] = useState<Achievement[]>([])
 
+  // Adaptive learning system
+  const adaptiveLearningRef = useRef<AdaptiveLearningEngine>()
+
   // Companion system state
   const [showCompanionModal, setShowCompanionModal] = useState(false)
 
@@ -53,10 +56,13 @@ function App() {
   const [showTeacherDashboard, setShowTeacherDashboard] = useState(false)
   const [showParentDashboard, setShowParentDashboard] = useState(false)
 
-  // Initialize achievement manager
+  // Initialize achievement manager and adaptive learning
   useEffect(() => {
     const savedAchievements = AchievementManager.loadFromStorage()
     achievementManagerRef.current = new AchievementManager(savedAchievements || undefined)
+
+    // Initialize adaptive learning engine
+    adaptiveLearningRef.current = new AdaptiveLearningEngine('student-1')
 
     // Subscribe to achievement unlocks
     const unsubscribe = achievementManagerRef.current.onAchievementUnlocked((achievement) => {
