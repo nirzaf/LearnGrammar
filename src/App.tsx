@@ -251,6 +251,20 @@ function App() {
           starDust: playerProgress.starDust
         }}
       />
+
+      {/* Teacher Dashboard */}
+      <TeacherDashboard
+        isVisible={showTeacherDashboard}
+        onClose={() => setShowTeacherDashboard(false)}
+        studentData={mockStudentData}
+      />
+
+      {/* Parent Dashboard */}
+      <ParentDashboard
+        isVisible={showParentDashboard}
+        onClose={() => setShowParentDashboard(false)}
+        childData={mockChildData}
+      />
     </div>
   )
 }

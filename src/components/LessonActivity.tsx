@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import type { Lesson, Planet } from '../types/game'
 import CharacterGuide from './CharacterGuide'
+import { AdaptiveLearningEngine, StudentPerformance } from '../services/adaptiveLearning'
 
 interface LessonActivityProps {
   lesson: Lesson
   planet: Planet
   onBack: () => void
   onComplete: (lessonId: string, starDustEarned: number) => void
+  adaptiveLearning?: AdaptiveLearningEngine
 }
 
 /**
@@ -17,7 +19,8 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   lesson,
   planet,
   onBack,
-  onComplete
+  onComplete,
+  adaptiveLearning
 }) => {
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0)
   const [userAnswer, setUserAnswer] = useState<string>('')
@@ -32,6 +35,10 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   const [showCharacterGuide, setShowCharacterGuide] = useState(false)
   const [characterMessage, setCharacterMessage] = useState('')
   const [showIntroduction, setShowIntroduction] = useState(true)
+  const [hintsUsed, setHintsUsed] = useState(0)
+  const [attempts, setAttempts] = useState(0)
+  const [activityStartTime, setActivityStartTime] = useState<Date>(new Date())
+  const [adaptiveHint, setAdaptiveHint] = useState<string>('')
 
   const currentActivity = lesson.activities[currentActivityIndex]
   const isLastActivity = currentActivityIndex === lesson.activities.length - 1
@@ -74,6 +81,18 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
     setCharacterMessage(message)
     setShowCharacterGuide(true)
     setShowIntroduction(false)
+  }
+
+  const getAdaptiveHint = () => {
+    if (adaptiveLearning) {
+      const hint = adaptiveLearning.generatePersonalizedHint(
+        lesson.grammarConcept,
+        currentActivity.type
+      )
+      setAdaptiveHint(hint)
+      setHintsUsed(prev => prev + 1)
+      showCharacterFeedback(hint)
+    }
   }
 
   const handleSubmitAnswer = () => {
