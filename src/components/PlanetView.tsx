@@ -15,11 +15,12 @@ interface PlanetViewProps {
  * Planet View component displaying planet details, lessons, and activities
  * Handles lesson selection and progress tracking within a planet
  */
-const PlanetView: React.FC<PlanetViewProps> = ({ 
-  planet, 
-  onBack, 
-  onProgressUpdate, 
-  completedLessons 
+const PlanetView: React.FC<PlanetViewProps> = ({
+  planet,
+  onBack,
+  onProgressUpdate,
+  completedLessons,
+  adaptiveLearning
 }) => {
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null)
   const [showPlanetInfo, setShowPlanetInfo] = useState(true)
