@@ -1402,6 +1402,448 @@ export const planetsData: Planet[] = [
             }
           }
         ]
+      },
+      {
+        id: 'time-lesson-4',
+        title: 'Past Tense Time Portal - Understanding the Past Tense',
+        description: 'Travel to past events and describe them using past tense',
+        type: 'lesson',
+        grammarConcept: 'Past Tense',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'time-traveler-past',
+            type: 'multiple-choice',
+            title: 'Time Traveler',
+            instructions: 'Describe past adventures using past tense verbs!',
+            content: {
+              sentence: 'Yesterday, the knight ___ the dragon.',
+              options: ['fight', 'fights', 'fought', 'fighting']
+            },
+            correctAnswer: 'fought',
+            feedback: {
+              correct: 'Time portal stable! Past event recorded correctly!',
+              incorrect: 'Time distortion! Use past tense for yesterday!'
+            }
+          },
+          {
+            id: 'historian',
+            type: 'story-builder',
+            title: 'Historian',
+            instructions: 'Write historical accounts using appropriate past tense!',
+            content: {
+              story: 'Long ago, the Vikings ___ across the seas and ___ new lands.',
+              blanks: 2,
+              options: ['sailed', 'sail', 'discovered', 'discover', 'traveling', 'found']
+            },
+            correctAnswer: ['sailed', 'discovered'],
+            feedback: {
+              correct: 'Historical accuracy achieved! The record is complete!',
+              incorrect: 'Historical error! Use past tense for long ago events!'
+            }
+          },
+          {
+            id: 'diary-writer',
+            type: 'typing',
+            title: 'Diary Writer',
+            instructions: 'Create diary entries using past tense verbs!',
+            content: {
+              question: 'Write about what you did yesterday: Yesterday, I ___ to the park.',
+              sentence: 'Complete your diary entry: ___'
+            },
+            correctAnswer: 'went',
+            feedback: {
+              correct: 'Perfect diary entry! Your memories are preserved!',
+              incorrect: 'Diary confusion! Use past tense for yesterday!'
+            }
+          },
+          {
+            id: 'news-reporter-past',
+            type: 'multiple-choice',
+            title: 'News Reporter',
+            instructions: 'Report yesterday\'s events using past tense!',
+            content: {
+              sentence: 'The mayor ___ a new park yesterday.',
+              options: ['opens', 'opened', 'opening', 'will open']
+            },
+            correctAnswer: 'opened',
+            feedback: {
+              correct: 'Breaking news delivered accurately!',
+              incorrect: 'News error! Use past tense for yesterday\'s events!'
+            }
+          },
+          {
+            id: 'storyteller',
+            type: 'drag-drop',
+            title: 'Storyteller',
+            instructions: 'Tell stories about past events using correct past tense!',
+            content: {
+              words: ['walked', 'walk', 'played', 'play', 'ate', 'eat', 'slept', 'sleep'],
+              categories: ['Past Tense', 'Present Tense']
+            },
+            correctAnswer: ['walked:Past Tense', 'played:Past Tense', 'ate:Past Tense', 'slept:Past Tense', 'walk:Present Tense', 'play:Present Tense', 'eat:Present Tense', 'sleep:Present Tense'],
+            feedback: {
+              correct: 'Masterful storytelling! The audience is captivated!',
+              incorrect: 'Story confusion! Sort the tenses correctly!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'time-lesson-5',
+        title: 'Past Tense Practice Chamber - Using the Past Tense',
+        description: 'Create past tense stories with interactive elements',
+        type: 'lesson',
+        grammarConcept: 'Past Tense Usage',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'story-converter',
+            type: 'story-builder',
+            title: 'Story Converter',
+            instructions: 'Transform present tense stories to past tense!',
+            content: {
+              story: 'The princess walks to the castle and meets the prince.',
+              blanks: 2,
+              options: ['walked', 'met', 'walks', 'meets', 'running', 'seeing']
+            },
+            correctAnswer: ['walked', 'met'],
+            feedback: {
+              correct: 'Perfect conversion! The story is now in the past!',
+              incorrect: 'Conversion incomplete! Use past tense verbs!'
+            }
+          },
+          {
+            id: 'memory-bank',
+            type: 'matching',
+            title: 'Memory Bank',
+            instructions: 'Match present and past tense verb pairs!',
+            content: {
+              words: ['run', 'sing', 'write', 'think'],
+              categories: ['ran', 'sang', 'wrote', 'thought']
+            },
+            correctAnswer: ['run:ran', 'sing:sang', 'write:wrote', 'think:thought'],
+            feedback: {
+              correct: 'Memory bank updated! All verb pairs matched!',
+              incorrect: 'Memory error! Check your verb transformations!'
+            }
+          },
+          {
+            id: 'time-capsule',
+            type: 'typing',
+            title: 'Time Capsule',
+            instructions: 'Describe past events for future generations!',
+            content: {
+              question: 'What did people do in the past? Long ago, people ___ by candlelight.',
+              sentence: 'Complete the time capsule message: ___'
+            },
+            correctAnswer: 'lived',
+            feedback: {
+              correct: 'Time capsule sealed! Future generations will understand!',
+              incorrect: 'Time capsule error! Use past tense for long ago!'
+            }
+          },
+          {
+            id: 'photo-album',
+            type: 'multiple-choice',
+            title: 'Photo Album',
+            instructions: 'Describe past photos using appropriate past tense!',
+            content: {
+              sentence: 'In this photo, we ___ at the beach last summer.',
+              options: ['play', 'played', 'playing', 'will play']
+            },
+            correctAnswer: 'played',
+            feedback: {
+              correct: 'Perfect photo caption! The memory is preserved!',
+              incorrect: 'Caption error! Use past tense for last summer!'
+            }
+          },
+          {
+            id: 'adventure-log',
+            type: 'story-builder',
+            title: 'Adventure Log',
+            instructions: 'Write adventure stories using past tense verbs!',
+            content: {
+              story: 'The explorer ___ through the jungle and ___ a hidden temple.',
+              blanks: 2,
+              options: ['traveled', 'found', 'travels', 'finds', 'walking', 'seeing']
+            },
+            correctAnswer: ['traveled', 'found'],
+            feedback: {
+              correct: 'Epic adventure logged! The story is complete!',
+              incorrect: 'Adventure incomplete! Use past tense verbs!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'time-lesson-6',
+        title: 'Agreement Time Machine - Understanding Verb Agreement',
+        description: 'Master the harmony between subjects and verbs across time',
+        type: 'lesson',
+        grammarConcept: 'Advanced Verb Agreement',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'agreement-detective',
+            type: 'multiple-choice',
+            title: 'Agreement Detective',
+            instructions: 'Find and fix verb agreement errors!',
+            content: {
+              sentence: 'The group of students ___ working hard.',
+              options: ['is', 'are', 'was', 'were']
+            },
+            correctAnswer: 'is',
+            feedback: {
+              correct: 'Case solved! Perfect agreement detected!',
+              incorrect: 'Agreement error found! Think about collective nouns!'
+            }
+          },
+          {
+            id: 'sentence-doctor',
+            type: 'drag-drop',
+            title: 'Sentence Doctor',
+            instructions: 'Heal sick sentences with proper agreement!',
+            content: {
+              sentence: 'The team are playing well.',
+              words: ['is', 'are', 'was', 'were'],
+              categories: ['Correct', 'Incorrect']
+            },
+            correctAnswer: ['is:Correct', 'are:Incorrect', 'was:Incorrect', 'were:Incorrect'],
+            feedback: {
+              correct: 'Patient healed! Sentence is healthy again!',
+              incorrect: 'Patient still sick! Check collective noun agreement!'
+            }
+          },
+          {
+            id: 'communication-specialist',
+            type: 'story-builder',
+            title: 'Communication Specialist',
+            instructions: 'Help characters agree their verbs properly!',
+            content: {
+              story: 'Either the cat or the dogs ___ in the yard, and neither the birds nor the squirrel ___ afraid.',
+              blanks: 2,
+              options: ['is', 'are', 'was', 'were']
+            },
+            correctAnswer: ['are', 'is'],
+            feedback: {
+              correct: 'Communication perfected! Everyone understands!',
+              incorrect: 'Communication breakdown! Check either/or and neither/nor rules!'
+            }
+          },
+          {
+            id: 'grammar-guardian',
+            type: 'multiple-choice',
+            title: 'Grammar Guardian',
+            instructions: 'Protect the language from agreement errors!',
+            content: {
+              sentence: 'Each of the players ___ their best.',
+              options: ['do', 'does', 'doing', 'done']
+            },
+            correctAnswer: 'does',
+            feedback: {
+              correct: 'Language protected! Grammar rules upheld!',
+              incorrect: 'Grammar violation! "Each" is singular!'
+            }
+          },
+          {
+            id: 'writing-wizard',
+            type: 'typing',
+            title: 'Writing Wizard',
+            instructions: 'Cast spells using perfect verb agreement!',
+            content: {
+              question: 'The scissors ___ on the table.',
+              sentence: 'Complete the spell: ___'
+            },
+            correctAnswer: 'are',
+            feedback: {
+              correct: 'Magical spell cast! Perfect agreement achieved!',
+              incorrect: 'Spell failed! Some nouns are always plural!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'time-lesson-7',
+        title: 'Agreement Mastery - Ensuring Verb Agreement',
+        description: 'Achieve mastery in the most challenging agreement scenarios',
+        type: 'lesson',
+        grammarConcept: 'Mastery Level Agreement',
+        rewardStarDust: 75,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'master-class',
+            type: 'multiple-choice',
+            title: 'Master Class',
+            instructions: 'Demonstrate mastery of verb agreement!',
+            content: {
+              sentence: 'The news ___ very important today.',
+              options: ['is', 'are', 'was', 'were']
+            },
+            correctAnswer: 'is',
+            feedback: {
+              correct: 'Mastery achieved! You understand tricky nouns!',
+              incorrect: 'More practice needed! "News" is singular!'
+            }
+          },
+          {
+            id: 'teaching-assistant',
+            type: 'story-builder',
+            title: 'Teaching Assistant',
+            instructions: 'Help other students with agreement problems!',
+            content: {
+              story: 'Mathematics ___ my favorite subject, but physics ___ also interesting.',
+              blanks: 2,
+              options: ['is', 'are', 'was', 'were']
+            },
+            correctAnswer: ['is', 'is'],
+            feedback: {
+              correct: 'Excellent teaching! Students understand now!',
+              incorrect: 'Students still confused! Subject names are singular!'
+            }
+          },
+          {
+            id: 'quality-controller',
+            type: 'drag-drop',
+            title: 'Quality Controller',
+            instructions: 'Ensure all writing has perfect agreement!',
+            content: {
+              words: ['The data is clear', 'The data are clear', 'Ten dollars is enough', 'Ten dollars are enough'],
+              categories: ['Correct', 'Incorrect']
+            },
+            correctAnswer: ['The data are clear:Correct', 'Ten dollars is enough:Correct', 'The data is clear:Incorrect', 'Ten dollars are enough:Incorrect'],
+            feedback: {
+              correct: 'Quality approved! Perfect agreement standards met!',
+              incorrect: 'Quality check failed! Review data and money rules!'
+            }
+          },
+          {
+            id: 'agreement-ambassador',
+            type: 'multiple-choice',
+            title: 'Agreement Ambassador',
+            instructions: 'Spread good agreement practices!',
+            content: {
+              sentence: 'The United States ___ a large country.',
+              options: ['is', 'are', 'was', 'were']
+            },
+            correctAnswer: 'is',
+            feedback: {
+              correct: 'Diplomatic success! Agreement treaty signed!',
+              incorrect: 'Diplomatic crisis! Country names are singular!'
+            }
+          },
+          {
+            id: 'grammar-guru',
+            type: 'typing',
+            title: 'Grammar Guru',
+            instructions: 'Solve complex agreement challenges!',
+            content: {
+              question: 'The committee ___ meeting tomorrow.',
+              sentence: 'Complete with wisdom: ___'
+            },
+            correctAnswer: 'is',
+            feedback: {
+              correct: 'Guru wisdom achieved! Complex challenge solved!',
+              incorrect: 'More meditation needed! Collective nouns can be tricky!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'time-lesson-8',
+        title: 'Verb Transformer - Changing Verbs in Sentences',
+        description: 'Master the art of verb transformation and sentence enhancement',
+        type: 'lesson',
+        grammarConcept: 'Verb Transformation',
+        rewardStarDust: 75,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'verb-scientist',
+            type: 'multiple-choice',
+            title: 'Verb Scientist',
+            instructions: 'Experiment with different verb transformations!',
+            content: {
+              sentence: 'The cat walks → The cat ___',
+              options: ['walked', 'will walk', 'is walking', 'all of the above']
+            },
+            correctAnswer: 'all of the above',
+            feedback: {
+              correct: 'Scientific breakthrough! All transformations possible!',
+              incorrect: 'Experiment incomplete! Verbs can transform in many ways!'
+            }
+          },
+          {
+            id: 'sentence-improver',
+            type: 'story-builder',
+            title: 'Sentence Improver',
+            instructions: 'Enhance sentences by changing verbs!',
+            content: {
+              story: 'The old sentence: "The dog runs." The improved sentence: "The dog ___ gracefully."',
+              blanks: 1,
+              options: ['gallops', 'moves', 'dances', 'flows']
+            },
+            correctAnswer: ['gallops'],
+            feedback: {
+              correct: 'Sentence enhanced! Much more vivid and interesting!',
+              incorrect: 'Enhancement needed! Choose a more descriptive verb!'
+            }
+          },
+          {
+            id: 'style-consultant',
+            type: 'drag-drop',
+            title: 'Style Consultant',
+            instructions: 'Advise on verb choices for different effects!',
+            content: {
+              words: ['whispered', 'shouted', 'mumbled', 'announced'],
+              categories: ['Quiet Speaking', 'Loud Speaking']
+            },
+            correctAnswer: ['whispered:Quiet Speaking', 'mumbled:Quiet Speaking', 'shouted:Loud Speaking', 'announced:Loud Speaking'],
+            feedback: {
+              correct: 'Style consultation successful! Perfect verb choices!',
+              incorrect: 'Style revision needed! Consider the volume level!'
+            }
+          },
+          {
+            id: 'creative-writer-verbs',
+            type: 'multiple-choice',
+            title: 'Creative Writer',
+            instructions: 'Transform writing by changing verb forms!',
+            content: {
+              sentence: 'To make "I eat breakfast" more interesting, try:',
+              options: ['I devour breakfast', 'I am eating breakfast', 'I will eat breakfast', 'all are improvements']
+            },
+            correctAnswer: 'all are improvements',
+            feedback: {
+              correct: 'Creative genius! All transformations add interest!',
+              incorrect: 'Creativity blocked! All options improve the original!'
+            }
+          },
+          {
+            id: 'language-artist',
+            type: 'typing',
+            title: 'Language Artist',
+            instructions: 'Create artistic effects through verb changes!',
+            content: {
+              question: 'Transform "The rain falls" into something more poetic.',
+              sentence: 'Artistic version: "The rain ___"'
+            },
+            correctAnswer: 'dances',
+            feedback: {
+              correct: 'Artistic masterpiece! Beautiful verb transformation!',
+              incorrect: 'Art needs refinement! Try a more creative verb!'
+            }
+          }
+        ]
       }
     ]
   },
