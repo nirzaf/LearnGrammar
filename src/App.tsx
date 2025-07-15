@@ -8,9 +8,10 @@ import CompanionModal from './components/CompanionModal'
 import TeacherDashboard from './components/TeacherDashboard'
 import ParentDashboard from './components/ParentDashboard'
 import AdaptiveLearningPanel from './components/AdaptiveLearningPanel'
+import StoryCreator from './components/StoryCreator'
 import { AchievementManager } from './services/achievementManager'
 import { AdaptiveLearningEngine } from './services/adaptiveLearning'
-import { calculateEvolutionLevel, getCompanionEvolution, companionMoods } from './data/companions'
+import { calculateEvolutionLevel, getCompanionEvolution } from './data/companions'
 import type { Planet, Achievement, CompanionState } from './types/game'
 
 /**
@@ -42,13 +43,13 @@ function App() {
   })
 
   // Achievement system state
-  const achievementManagerRef = useRef<AchievementManager>()
+  const achievementManagerRef = useRef<AchievementManager | null>(null)
   const [showAchievementModal, setShowAchievementModal] = useState(false)
   const [currentNotification, setCurrentNotification] = useState<Achievement | null>(null)
   const [achievements, setAchievements] = useState<Achievement[]>([])
 
   // Adaptive learning system
-  const adaptiveLearningRef = useRef<AdaptiveLearningEngine>()
+  const adaptiveLearningRef = useRef<AdaptiveLearningEngine | null>(null)
 
   // Companion system state
   const [showCompanionModal, setShowCompanionModal] = useState(false)
@@ -57,6 +58,7 @@ function App() {
   const [showTeacherDashboard, setShowTeacherDashboard] = useState(false)
   const [showParentDashboard, setShowParentDashboard] = useState(false)
   const [showAdaptiveLearning, setShowAdaptiveLearning] = useState(false)
+  const [showStoryCreator, setShowStoryCreator] = useState(false)
 
   // Initialize achievement manager and adaptive learning
   useEffect(() => {
@@ -221,6 +223,8 @@ function App() {
         onShowCompanion={() => setShowCompanionModal(true)}
         onShowTeacherDashboard={() => setShowTeacherDashboard(true)}
         onShowParentDashboard={() => setShowParentDashboard(true)}
+        onShowAdaptiveLearning={() => setShowAdaptiveLearning(true)}
+        onShowStoryCreator={() => setShowStoryCreator(true)}
       />
 
       <main className="w-full">
@@ -230,7 +234,7 @@ function App() {
             onBack={handleBackToGalaxy}
             onProgressUpdate={handleProgressUpdate}
             completedLessons={playerProgress.completedLessons}
-            adaptiveLearning={adaptiveLearningRef.current}
+            adaptiveLearning={adaptiveLearningRef.current || undefined}
           />
         ) : (
           <GalaxyMap
@@ -280,6 +284,24 @@ function App() {
         isVisible={showParentDashboard}
         onClose={() => setShowParentDashboard(false)}
         childData={mockChildData}
+      />
+
+      {/* Adaptive Learning Panel */}
+      {adaptiveLearningRef.current && (
+        <AdaptiveLearningPanel
+          recommendations={adaptiveLearningRef.current.getRecommendations()}
+          learningProfile={adaptiveLearningRef.current.getLearningProfile()}
+          onRecommendationAction={handleAdaptiveRecommendationAction}
+          isVisible={showAdaptiveLearning}
+          onClose={() => setShowAdaptiveLearning(false)}
+        />
+      )}
+
+      {/* Story Creator */}
+      <StoryCreator
+        isVisible={showStoryCreator}
+        onClose={() => setShowStoryCreator(false)}
+        completedLessons={playerProgress.completedLessons}
       />
     </div>
   )

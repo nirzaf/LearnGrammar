@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import type { Lesson, Planet } from '../types/game'
 import CharacterGuide from './CharacterGuide'
-import { AdaptiveLearningEngine, StudentPerformance } from '../services/adaptiveLearning'
+import type { StudentPerformance } from '../services/adaptiveLearning'
+import { AdaptiveLearningEngine } from '../services/adaptiveLearning'
 
 interface LessonActivityProps {
   lesson: Lesson
@@ -38,7 +39,7 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   const [hintsUsed, setHintsUsed] = useState(0)
   const [attempts, setAttempts] = useState(0)
   const [activityStartTime, setActivityStartTime] = useState<Date>(new Date())
-  const [adaptiveHint, setAdaptiveHint] = useState<string>('')
+  const [, setAdaptiveHint] = useState<string>('')
 
   const currentActivity = lesson.activities[currentActivityIndex]
   const isLastActivity = currentActivityIndex === lesson.activities.length - 1
@@ -437,6 +438,7 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   }
 
   return (
+    <>
     <div className="min-h-screen bg-space-blue">
       {/* Header */}
       <div className="bg-slate-900/80 backdrop-blur-sm border-b border-slate-700">
@@ -604,6 +606,7 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
       message={characterMessage}
       showIntroduction={showIntroduction}
     />
+    </>
   )
 }
 

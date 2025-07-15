@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Achievement } from '../types/game'
+import { useState } from 'react'
+import type { Achievement } from '../types/game'
 
 interface AchievementModalProps {
   achievements: Achievement[]

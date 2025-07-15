@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { AdaptiveRecommendation, LearningProfile } from '../services/adaptiveLearning'
+import { useState } from 'react'
+import type { AdaptiveRecommendation, LearningProfile } from '../services/adaptiveLearning'
 
 interface AdaptiveLearningPanelProps {
   recommendations: AdaptiveRecommendation[]

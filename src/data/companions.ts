@@ -1,4 +1,4 @@
-import { CompanionState } from '../types/game'
+
 
 export interface CompanionEvolution {
   level: number
@@ -226,7 +226,7 @@ export function getNextEvolutionRequirement(currentLevel: number): CompanionEvol
   return companionEvolutions.find(e => e.level === nextLevel) || null
 }
 
-export function getCompanionMoodFromActivity(activityType: string, isCorrect: boolean): keyof typeof companionMoods {
+export function getCompanionMoodFromActivity(_activityType: string, isCorrect: boolean): keyof typeof companionMoods {
   if (isCorrect) {
     return Math.random() > 0.5 ? 'happy' : 'excited'
   } else {

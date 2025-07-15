@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Achievement } from '../types/game'
+import { useState } from 'react'
+import type { Achievement } from '../types/game'
 
 interface StudentProgress {
   id: string
@@ -282,7 +282,7 @@ export default function TeacherDashboard({ isVisible, onClose, studentData }: Te
               <div className="bg-slate-800/50 rounded-lg p-4">
                 <h4 className="text-lg font-bold text-white mb-3">🌍 Planet Progress</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {['Planet Core', 'Planet Signpost', 'Planet Morph', 'Planet Time-Warp', 'Planet Connector', 'Punctuation Palace'].map((planet, index) => {
+                  {['Planet Core', 'Planet Signpost', 'Planet Morph', 'Planet Time-Warp', 'Planet Connector', 'Punctuation Palace'].map((planet) => {
                     const isCompleted = selectedStudent.completedPlanets.includes(planet.toLowerCase().replace(' ', '-'))
                     const isCurrent = selectedStudent.currentPlanet === planet.toLowerCase().replace(' ', '-')
                     

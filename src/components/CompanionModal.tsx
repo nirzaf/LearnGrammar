@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { CompanionState } from '../types/game'
+import { useState } from 'react'
+import type { CompanionState } from '../types/game'
 import { 
   getCompanionEvolution, 
   getNextEvolutionRequirement, 

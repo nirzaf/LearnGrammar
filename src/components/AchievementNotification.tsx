@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Achievement } from '../types/game'
+import { useEffect, useState } from 'react'
+import type { Achievement } from '../types/game'
 
 interface AchievementNotificationProps {
   achievement: Achievement | null

@@ -1,4 +1,4 @@
-import { Achievement } from '../types/game'
+import type { Achievement } from '../types/game'
 import { achievements as defaultAchievements } from '../data/achievements'
 
 export class AchievementManager {

@@ -8,6 +8,7 @@ interface GameHeaderProps {
   onShowTeacherDashboard?: () => void
   onShowParentDashboard?: () => void
   onShowAdaptiveLearning?: () => void
+  onShowStoryCreator?: () => void
 }
 
 /**
@@ -21,7 +22,8 @@ const GameHeader: React.FC<GameHeaderProps> = ({
   onShowCompanion,
   onShowTeacherDashboard,
   onShowParentDashboard,
-  onShowAdaptiveLearning
+  onShowAdaptiveLearning,
+  onShowStoryCreator
 }) => {
   const [showCompanionDetails, setShowCompanionDetails] = useState(false)
 
@@ -101,6 +103,17 @@ const GameHeader: React.FC<GameHeaderProps> = ({
                 title="Adaptive Learning Assistant"
               >
                 <span className="text-lg">🧠</span>
+              </button>
+            )}
+
+            {/* Story Creator Button */}
+            {onShowStoryCreator && (
+              <button
+                onClick={onShowStoryCreator}
+                className="p-2 rounded-full bg-slate-800/50 border border-slate-600 hover:bg-slate-700/50 transition-colors duration-200"
+                title="Create Stories"
+              >
+                <span className="text-lg">📚</span>
               </button>
             )}
 

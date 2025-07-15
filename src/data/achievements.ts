@@ -1,4 +1,4 @@
-import { Achievement } from '../types/game'
+import type { Achievement } from '../types/game'
 
 export const achievements: Achievement[] = [
   // Progress Achievements

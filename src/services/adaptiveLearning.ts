@@ -1,4 +1,4 @@
-import { Activity, Lesson } from '../types/game'
+
 
 export interface StudentPerformance {
   lessonId: string
@@ -98,7 +98,7 @@ export class AdaptiveLearningEngine {
     this.updatePreferredActivityTypes(performance)
   }
 
-  private updateLearningSpeed(performance: StudentPerformance) {
+  private updateLearningSpeed(_performance: StudentPerformance) {
     const recentPerformances = this.performanceHistory.slice(-10)
     const averageTime = recentPerformances.reduce((sum, p) => sum + p.timeSpent, 0) / recentPerformances.length
     
@@ -158,7 +158,7 @@ export class AdaptiveLearningEngine {
   }
 
   // Generate personalized hints based on student's learning profile
-  generatePersonalizedHint(concept: string, activityType: string): string {
+  generatePersonalizedHint(concept: string, _activityType: string): string {
     const mastery = this.learningProfile.conceptMastery[concept] || 0.5
     const isStruggling = this.learningProfile.strugglingConcepts.includes(concept)
     

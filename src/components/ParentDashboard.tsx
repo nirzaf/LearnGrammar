@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Achievement } from '../types/game'
+import { useState } from 'react'
+import type { Achievement } from '../types/game'
 
 interface ChildProgress {
   id: string
@@ -27,7 +27,7 @@ interface ParentDashboardProps {
 
 export default function ParentDashboard({ isVisible, onClose, childData }: ParentDashboardProps) {
   const [activeTab, setActiveTab] = useState<'progress' | 'achievements' | 'insights' | 'settings'>('progress')
-  const [timeRange, setTimeRange] = useState<'week' | 'month' | 'all'>('week')
+  // const [timeRange] = useState<'week' | 'month' | 'all'>('week')
 
   if (!isVisible) return null
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Planet } from '../types/game'
+import { useState, useEffect } from 'react'
+import type { Planet } from '../types/game'
 
 interface CharacterGuideProps {
   planet: Planet
@@ -139,7 +139,7 @@ const characterData: Record<string, CharacterInfo> = {
 export default function CharacterGuide({ planet, isVisible, onClose, message, showIntroduction = false }: CharacterGuideProps) {
   const [currentMessage, setCurrentMessage] = useState('')
   const [isAnimating, setIsAnimating] = useState(false)
-  const [messageIndex, setMessageIndex] = useState(0)
+  // const [messageIndex] = useState(0)
 
   const character = characterData[planet.id] || characterData['planet-core']
 
