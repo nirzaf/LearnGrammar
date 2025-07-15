@@ -204,6 +204,8 @@ function App() {
         companionEvolution={companion.evolutionLevel}
         onShowAchievements={() => setShowAchievementModal(true)}
         onShowCompanion={() => setShowCompanionModal(true)}
+        onShowTeacherDashboard={() => setShowTeacherDashboard(true)}
+        onShowParentDashboard={() => setShowParentDashboard(true)}
       />
 
       <main className="w-full">
