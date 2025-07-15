@@ -17,34 +17,95 @@ export const planetsData: Planet[] = [
     lessons: [
       {
         id: 'core-lesson-1',
-        title: 'Crystal Catcher: Revising Nouns',
-        description: 'Help collect noun crystals in this fast-paced mining game',
-        type: 'practice',
+        title: 'Noun Knights - Revising Nouns',
+        description: 'Help the Noun Knights collect magical objects for their quest',
+        type: 'lesson',
         grammarConcept: 'Nouns',
         rewardStarDust: 50,
         isCompleted: false,
         isUnlocked: true,
         activities: [
           {
-            id: 'crystal-catcher-1',
+            id: 'noun-treasure-hunt',
+            type: 'multiple-choice',
+            title: 'Treasure Hunt',
+            instructions: 'Click on all the nouns in this animated castle scene!',
+            content: {
+              sentence: 'The brave knight rode his horse to the castle where the princess waited.',
+              options: ['knight, horse, castle, princess', 'brave, rode, waited', 'the, his, to, where', 'knight, brave, castle']
+            },
+            correctAnswer: 'knight, horse, castle, princess',
+            feedback: {
+              correct: 'Excellent! You found all the treasure nouns!',
+              incorrect: 'Some treasures are still hidden. Look for people, places, things, and ideas!'
+            }
+          },
+          {
+            id: 'noun-sorting-challenge',
             type: 'drag-drop',
-            title: 'Crystal Catcher',
-            instructions: 'Catch the falling word-crystals by dragging them to the correct mine cart!',
+            title: 'Sorting Challenge',
+            instructions: 'Categorize these nouns into the correct treasure chests!',
             content: {
               words: ['teacher', 'park', 'ball', 'happiness', 'dog', 'school', 'book', 'love'],
               categories: ['Person', 'Place', 'Thing', 'Idea']
             },
-            correctAnswer: ['teacher:Person', 'park:Place', 'ball:Thing', 'happiness:Idea'],
+            correctAnswer: ['teacher:Person', 'dog:Person', 'park:Place', 'school:Place', 'ball:Thing', 'book:Thing', 'happiness:Idea', 'love:Idea'],
             feedback: {
-              correct: 'Excellent! You caught the crystal in the right cart!',
-              incorrect: 'Oops! That crystal belongs in a different cart. Try again!'
+              correct: 'Perfect sorting! The treasure chests are organized!',
+              incorrect: 'Some nouns are in the wrong chest. Try again!'
+            }
+          },
+          {
+            id: 'story-builder-nouns',
+            type: 'story-builder',
+            title: 'Story Builder',
+            instructions: 'Complete this mini-story by selecting appropriate nouns!',
+            content: {
+              story: 'The ___ walked to the ___ and found a magical ___.',
+              blanks: 3,
+              options: ['wizard', 'library', 'book', 'quickly', 'ran', 'beautiful']
+            },
+            correctAnswer: ['wizard', 'library', 'book'],
+            feedback: {
+              correct: 'Amazing story! You chose perfect nouns!',
+              incorrect: 'Check your choices - make sure they are all nouns!'
+            }
+          },
+          {
+            id: 'memory-match-nouns',
+            type: 'matching',
+            title: 'Memory Match',
+            instructions: 'Match noun cards with their category symbols!',
+            content: {
+              words: ['doctor', 'hospital', 'stethoscope', 'kindness'],
+              categories: ['Person', 'Place', 'Thing', 'Idea']
+            },
+            correctAnswer: ['doctor:Person', 'hospital:Place', 'stethoscope:Thing', 'kindness:Idea'],
+            feedback: {
+              correct: 'Perfect match! You understand noun categories!',
+              incorrect: 'Try again! Think about what each noun represents.'
+            }
+          },
+          {
+            id: 'dragons-riddle-nouns',
+            type: 'typing',
+            title: 'Dragon\'s Riddle',
+            instructions: 'Answer the dragon\'s riddle - the solution is always a noun!',
+            content: {
+              question: 'I am a place where books live, students study, and knowledge grows. What am I?',
+              sentence: 'The dragon guards the entrance to the ___'
+            },
+            correctAnswer: 'library',
+            feedback: {
+              correct: 'Correct! The dragon allows you to pass!',
+              incorrect: 'The dragon shakes its head. Think of a place with books!'
             }
           }
         ]
       },
       {
         id: 'core-lesson-2',
-        title: 'Verb Wizards: Revising Singular Verbs',
+        title: 'Verb Wizards - Revising Singular Verbs',
         description: 'Cast spells with singular verbs to power up your magic',
         type: 'lesson',
         grammarConcept: 'Singular Verbs',
@@ -53,18 +114,79 @@ export const planetsData: Planet[] = [
         isUnlocked: true,
         activities: [
           {
-            id: 'verb-spells-1',
+            id: 'action-movie-verbs',
             type: 'multiple-choice',
-            title: 'Spell Casting',
-            instructions: 'Choose the correct singular verb to complete the magic spell!',
+            title: 'Action Movie',
+            instructions: 'Watch this short animation and identify the singular verb!',
             content: {
-              sentence: 'The wizard ___ a powerful spell.',
-              options: ['cast', 'casts', 'casting', 'casted']
+              sentence: 'The wizard carefully ___ the ancient scroll.',
+              options: ['reads', 'read', 'reading', 'reader']
             },
-            correctAnswer: 'casts',
+            correctAnswer: 'reads',
             feedback: {
-              correct: 'Perfect! Your spell is cast successfully!',
-              incorrect: 'The spell fizzled! Try a different verb form.'
+              correct: 'Excellent! The wizard\'s magic grows stronger!',
+              incorrect: 'The spell fizzled! Remember, singular subjects need singular verbs.'
+            }
+          },
+          {
+            id: 'spell-completion',
+            type: 'typing',
+            title: 'Spell Completion',
+            instructions: 'Fill in the missing singular verb to complete this magic spell!',
+            content: {
+              question: 'Complete the spell: The dragon ___ fire from its mouth.',
+              sentence: 'When the dragon gets angry, it always ___ fire.'
+            },
+            correctAnswer: 'breathes',
+            feedback: {
+              correct: 'Perfect! The spell is complete and glowing!',
+              incorrect: 'The spell is incomplete. Try a singular verb!'
+            }
+          },
+          {
+            id: 'character-commands',
+            type: 'multiple-choice',
+            title: 'Character Commands',
+            instructions: 'Give commands to animated characters using singular verbs!',
+            content: {
+              sentence: 'The knight ___ his sword with great skill.',
+              options: ['swing', 'swings', 'swinging', 'swung']
+            },
+            correctAnswer: 'swings',
+            feedback: {
+              correct: 'The knight follows your command perfectly!',
+              incorrect: 'The knight looks confused. Try a singular verb!'
+            }
+          },
+          {
+            id: 'verb-transformation',
+            type: 'drag-drop',
+            title: 'Verb Transformation',
+            instructions: 'Transform these sentences by changing the singular verb!',
+            content: {
+              sentence: 'The cat sleeps on the mat.',
+              words: ['runs', 'jumps', 'plays', 'sleeps'],
+              categories: ['New Verb']
+            },
+            correctAnswer: ['runs:New Verb'],
+            feedback: {
+              correct: 'Great transformation! The sentence has new meaning!',
+              incorrect: 'Try a different singular verb to transform the sentence!'
+            }
+          },
+          {
+            id: 'rhythm-game-verbs',
+            type: 'multiple-choice',
+            title: 'Rhythm Game',
+            instructions: 'Tap to the beat while identifying singular verbs in this song!',
+            content: {
+              sentence: '♪ The bird ___ in the morning light ♪',
+              options: ['sing', 'sings', 'singing', 'sang']
+            },
+            correctAnswer: 'sings',
+            feedback: {
+              correct: 'Perfect rhythm! The song sounds beautiful!',
+              incorrect: 'Off beat! Try to match the singular subject with a singular verb!'
             }
           }
         ]
