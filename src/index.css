@@ -5,12 +5,23 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
   body {
     @apply bg-space-blue text-white font-cosmic;
     margin: 0;
+    padding: 0;
     min-height: 100vh;
     background: linear-gradient(135deg, #0B1426 0%, #1E293B 50%, #0F172A 100%);
     background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  
+  #root {
+    min-height: 100vh;
+    width: 100%;
   }
 }
 

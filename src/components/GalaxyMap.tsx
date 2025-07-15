@@ -109,11 +109,11 @@ const GalaxyMap: React.FC<GalaxyMapProps> = ({
       </div>
 
       {/* Galaxy Map Container */}
-      <div className="relative max-w-6xl mx-auto h-[600px] mt-8">
+      <div className="relative max-w-6xl mx-auto h-[600px] mt-8 px-4">
         {/* Central Black Hole (The Great Void) */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-20 h-20 bg-gradient-radial from-purple-900 to-black rounded-full animate-pulse-slow border-4 border-purple-500">
-            <div className="w-full h-full rounded-full bg-gradient-radial from-transparent to-black animate-spin" style={{ animationDuration: '10s' }}></div>
+          <div className="w-20 h-20 bg-gradient-to-r from-purple-900 to-black rounded-full animate-pulse border-4 border-purple-500">
+            <div className="w-full h-full rounded-full bg-gradient-to-r from-transparent to-black animate-spin duration-[10s]"></div>
           </div>
           <div className="text-center mt-2">
             <span className="text-sm text-purple-400 font-cosmic">The Great Void</span>
@@ -141,12 +141,9 @@ const GalaxyMap: React.FC<GalaxyMapProps> = ({
               {/* Planet Glow Effect */}
               {planetState.glow && (
                 <div 
-                  className={`absolute inset-0 rounded-full blur-lg animate-pulse`}
+                  className="absolute -inset-2 rounded-full blur-lg animate-pulse opacity-50"
                   style={{
                     backgroundColor: planet.color,
-                    width: '120px',
-                    height: '120px',
-                    transform: 'translate(-10px, -10px)'
                   }}
                 />
               )}

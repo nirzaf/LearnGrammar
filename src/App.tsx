@@ -45,26 +45,28 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-space-blue bg-stars overflow-hidden">
+    <div className="min-h-screen w-full bg-space-blue bg-stars">
       <GameHeader 
         starDust={playerProgress.starDust}
         companionEvolution={playerProgress.companionEvolution}
       />
       
-      {selectedPlanet ? (
-        <PlanetView 
-          planet={selectedPlanet}
-          onBack={handleBackToGalaxy}
-          onProgressUpdate={handleProgressUpdate}
-          completedLessons={playerProgress.completedLessons}
-        />
-      ) : (
-        <GalaxyMap 
-          onPlanetSelect={handlePlanetSelect}
-          unlockedPlanets={playerProgress.unlockedPlanets}
-          completedLessons={playerProgress.completedLessons}
-        />
-      )}
+      <main className="w-full">
+        {selectedPlanet ? (
+          <PlanetView 
+            planet={selectedPlanet}
+            onBack={handleBackToGalaxy}
+            onProgressUpdate={handleProgressUpdate}
+            completedLessons={playerProgress.completedLessons}
+          />
+        ) : (
+          <GalaxyMap 
+            onPlanetSelect={handlePlanetSelect}
+            unlockedPlanets={playerProgress.unlockedPlanets}
+            completedLessons={playerProgress.completedLessons}
+          />
+        )}
+      </main>
     </div>
   )
 }
