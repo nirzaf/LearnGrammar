@@ -3,6 +3,7 @@ import { useState } from 'react'
 interface GameHeaderProps {
   starDust: number
   companionEvolution: number
+  onShowAchievements?: () => void
 }
 
 /**

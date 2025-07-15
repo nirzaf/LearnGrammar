@@ -2396,6 +2396,888 @@ export const planetsData: Planet[] = [
             }
           }
         ]
+      },
+      {
+        id: 'palace-lesson-3',
+        title: 'Punctuation Carousel - Statements, Questions, Exclamations',
+        description: 'Ride the carousel while mastering sentence types',
+        type: 'lesson',
+        grammarConcept: 'Sentence Types and Punctuation',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'carousel-rider',
+            type: 'multiple-choice',
+            title: 'Carousel Rider',
+            instructions: 'Choose the correct punctuation as you ride!',
+            content: {
+              sentence: 'That movie was incredible___',
+              options: ['.', '!', '?', ',']
+            },
+            correctAnswer: '!',
+            feedback: {
+              correct: 'Perfect ride! You matched the excitement level!',
+              incorrect: 'Bumpy ride! Match punctuation to the emotion!'
+            }
+          },
+          {
+            id: 'sentence-sorter',
+            type: 'drag-drop',
+            title: 'Sentence Sorter',
+            instructions: 'Sort sentences by their punctuation type!',
+            content: {
+              words: ['I like cookies.', 'Do you like cookies?', 'Cookies are delicious!', 'Where are the cookies?'],
+              categories: ['Statements (.)', 'Questions (?)', 'Exclamations (!)']
+            },
+            correctAnswer: ['I like cookies.:Statements (.)', 'Do you like cookies?:Questions (?)', 'Cookies are delicious!:Exclamations (!)', 'Where are the cookies?:Questions (?)'],
+            feedback: {
+              correct: 'Sorting success! All sentence types organized!',
+              incorrect: 'Sorting error! Check the punctuation marks!'
+            }
+          },
+          {
+            id: 'punctuation-artist',
+            type: 'story-builder',
+            title: 'Punctuation Artist',
+            instructions: 'Create art using different sentence types!',
+            content: {
+              story: 'The sunset is beautiful___ Can you see it___ Look at those colors___',
+              blanks: 3,
+              options: ['.', '!', '?', ',']
+            },
+            correctAnswer: ['.', '?', '!'],
+            feedback: {
+              correct: 'Artistic masterpiece! Perfect punctuation variety!',
+              incorrect: 'Art needs refinement! Consider the sentence meanings!'
+            }
+          },
+          {
+            id: 'emotion-translator',
+            type: 'multiple-choice',
+            title: 'Emotion Translator',
+            instructions: 'Translate emotions into correct punctuation!',
+            content: {
+              sentence: 'A calm statement about the weather should end with:',
+              options: ['.', '!', '?', '...']
+            },
+            correctAnswer: '.',
+            feedback: {
+              correct: 'Translation perfect! Calm statements use periods!',
+              incorrect: 'Translation error! Calm statements need periods!'
+            }
+          },
+          {
+            id: 'punctuation-conductor',
+            type: 'typing',
+            title: 'Punctuation Conductor',
+            instructions: 'Conduct a symphony of sentence types!',
+            content: {
+              question: 'Write three sentences: one statement, one question, one exclamation.',
+              sentence: 'Your symphony: ___'
+            },
+            correctAnswer: 'I like music. Do you like music? Music is amazing!',
+            feedback: {
+              correct: 'Symphony conducted perfectly! Beautiful punctuation harmony!',
+              incorrect: 'Symphony needs tuning! Include all three sentence types!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-4',
+        title: 'Sentence Construction Zone - Forming Different Sentence Types',
+        description: 'Build various sentence types with proper punctuation',
+        type: 'lesson',
+        grammarConcept: 'Sentence Construction',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'construction-foreman',
+            type: 'multiple-choice',
+            title: 'Construction Foreman',
+            instructions: 'Supervise sentence construction projects!',
+            content: {
+              sentence: 'To build a question, you need:',
+              options: ['Subject + verb + period', 'Question word + subject + verb + question mark', 'Exclamation + period', 'Just a question mark']
+            },
+            correctAnswer: 'Question word + subject + verb + question mark',
+            feedback: {
+              correct: 'Construction approved! Perfect question blueprint!',
+              incorrect: 'Construction violation! Check question requirements!'
+            }
+          },
+          {
+            id: 'blueprint-designer',
+            type: 'story-builder',
+            title: 'Blueprint Designer',
+            instructions: 'Design blueprints for different sentence types!',
+            content: {
+              story: 'Statement: The cat sleeps___ Question: ___ the cat sleep___ Exclamation: The cat is so cute___',
+              blanks: 3,
+              options: ['.', '?', '!', 'Does', 'Where', 'How']
+            },
+            correctAnswer: ['.', 'Does', '!'],
+            feedback: {
+              correct: 'Blueprint approved! All sentence types designed correctly!',
+              incorrect: 'Blueprint revision needed! Check sentence structures!'
+            }
+          },
+          {
+            id: 'quality-inspector',
+            type: 'drag-drop',
+            title: 'Quality Inspector',
+            instructions: 'Inspect sentence construction quality!',
+            content: {
+              words: ['Well-built statement', 'Poorly built statement', 'The dog barks.', 'the dog barks', 'What time is it?', 'what time is it'],
+              categories: ['Good Construction', 'Needs Repair']
+            },
+            correctAnswer: ['The dog barks.:Good Construction', 'What time is it?:Good Construction', 'Well-built statement:Good Construction', 'the dog barks:Needs Repair', 'what time is it:Needs Repair', 'Poorly built statement:Needs Repair'],
+            feedback: {
+              correct: 'Quality inspection passed! All constructions meet standards!',
+              incorrect: 'Quality issues found! Check capitalization and punctuation!'
+            }
+          },
+          {
+            id: 'sentence-architect',
+            type: 'multiple-choice',
+            title: 'Sentence Architect',
+            instructions: 'Design architectural marvels of sentences!',
+            content: {
+              sentence: 'Which sentence shows the best construction?',
+              options: ['wow that is amazing', 'Wow, that is amazing!', 'wow, that is amazing.', 'Wow that is amazing?']
+            },
+            correctAnswer: 'Wow, that is amazing!',
+            feedback: {
+              correct: 'Architectural masterpiece! Perfect exclamation construction!',
+              incorrect: 'Architectural flaw! Check punctuation and capitalization!'
+            }
+          },
+          {
+            id: 'master-builder',
+            type: 'typing',
+            title: 'Master Builder',
+            instructions: 'Build complex sentence structures!',
+            content: {
+              question: 'Build a question about your favorite hobby.',
+              sentence: 'Your question: ___'
+            },
+            correctAnswer: 'What is your favorite hobby?',
+            feedback: {
+              correct: 'Master building achieved! Perfect question construction!',
+              incorrect: 'Building needs work! Questions need question words and question marks!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-5',
+        title: 'List Land - Understanding Lists',
+        description: 'Explore the organized world of lists and commas',
+        type: 'lesson',
+        grammarConcept: 'Lists and Commas',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'list-explorer',
+            type: 'multiple-choice',
+            title: 'List Explorer',
+            instructions: 'Navigate through properly formatted lists!',
+            content: {
+              sentence: 'Which list is correctly punctuated?',
+              options: ['apples oranges bananas', 'apples, oranges, bananas', 'apples, oranges and bananas', 'apples, oranges, and bananas']
+            },
+            correctAnswer: 'apples, oranges, and bananas',
+            feedback: {
+              correct: 'Exploration successful! Perfect list navigation!',
+              incorrect: 'Lost in List Land! Remember commas separate items!'
+            }
+          },
+          {
+            id: 'comma-collector',
+            type: 'drag-drop',
+            title: 'Comma Collector',
+            instructions: 'Collect commas for proper list formatting!',
+            content: {
+              sentence: 'I need pencils erasers rulers and paper.',
+              words: [',', ',', ','],
+              categories: ['After pencils', 'After erasers', 'After rulers']
+            },
+            correctAnswer: [',After pencils', ',After erasers', ',After rulers'],
+            feedback: {
+              correct: 'Collection complete! All commas properly placed!',
+              incorrect: 'Collection incomplete! Lists need commas between items!'
+            }
+          },
+          {
+            id: 'shopping-assistant',
+            type: 'story-builder',
+            title: 'Shopping Assistant',
+            instructions: 'Help create organized shopping lists!',
+            content: {
+              story: 'For the party, we need balloons___ streamers___ cake___ and ice cream.',
+              blanks: 3,
+              options: [',', '.', '!', '?']
+            },
+            correctAnswer: [',', ',', ','],
+            feedback: {
+              correct: 'Shopping list perfected! Party planning complete!',
+              incorrect: 'Shopping confusion! Use commas to separate list items!'
+            }
+          },
+          {
+            id: 'menu-designer',
+            type: 'multiple-choice',
+            title: 'Menu Designer',
+            instructions: 'Design restaurant menus with proper list formatting!',
+            content: {
+              sentence: 'Today\'s specials include soup salad pasta and dessert.',
+              options: ['soup, salad, pasta and dessert', 'soup, salad, pasta, and dessert', 'soup salad pasta and dessert', 'soup; salad; pasta; and dessert']
+            },
+            correctAnswer: 'soup, salad, pasta, and dessert',
+            feedback: {
+              correct: 'Menu design approved! Customers can read it clearly!',
+              incorrect: 'Menu revision needed! Use commas in lists!'
+            }
+          },
+          {
+            id: 'list-organizer',
+            type: 'typing',
+            title: 'List Organizer',
+            instructions: 'Organize information into proper lists!',
+            content: {
+              question: 'Write a list of three colors you like.',
+              sentence: 'My favorite colors are ___'
+            },
+            correctAnswer: 'red, blue, and green',
+            feedback: {
+              correct: 'Organization perfect! Beautiful list formatting!',
+              incorrect: 'Organization needed! Use commas between list items!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-6',
+        title: 'List Writing Workshop - Writing Lists',
+        description: 'Master the craft of writing various types of lists',
+        type: 'lesson',
+        grammarConcept: 'List Writing',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'workshop-instructor',
+            type: 'multiple-choice',
+            title: 'Workshop Instructor',
+            instructions: 'Teach proper list writing techniques!',
+            content: {
+              sentence: 'When writing a list in a sentence, always:',
+              options: ['Use periods between items', 'Use commas between items', 'Use question marks', 'Use no punctuation']
+            },
+            correctAnswer: 'Use commas between items',
+            feedback: {
+              correct: 'Instruction clear! Students understand list punctuation!',
+              incorrect: 'Instruction unclear! Commas separate list items!'
+            }
+          },
+          {
+            id: 'recipe-writer',
+            type: 'story-builder',
+            title: 'Recipe Writer',
+            instructions: 'Write ingredient lists for delicious recipes!',
+            content: {
+              story: 'To make cookies, you need flour___ sugar___ butter___ eggs___ and vanilla.',
+              blanks: 4,
+              options: [',', '.', '!', '?']
+            },
+            correctAnswer: [',', ',', ',', ','],
+            feedback: {
+              correct: 'Recipe perfected! Cookies will be delicious!',
+              incorrect: 'Recipe confusion! Use commas in ingredient lists!'
+            }
+          },
+          {
+            id: 'travel-planner',
+            type: 'drag-drop',
+            title: 'Travel Planner',
+            instructions: 'Plan trips with properly formatted packing lists!',
+            content: {
+              words: ['shirts', 'pants', 'shoes', 'socks'],
+              categories: ['Pack: shirts,', 'Pack: pants,', 'Pack: shoes,', 'Pack: and socks.']
+            },
+            correctAnswer: ['shirts:Pack: shirts,', 'pants:Pack: pants,', 'shoes:Pack: shoes,', 'socks:Pack: and socks.'],
+            feedback: {
+              correct: 'Travel planning complete! Perfect packing list!',
+              incorrect: 'Packing confusion! Check list formatting!'
+            }
+          },
+          {
+            id: 'party-planner',
+            type: 'multiple-choice',
+            title: 'Party Planner',
+            instructions: 'Plan parties with organized activity lists!',
+            content: {
+              sentence: 'Party activities: games music dancing and food.',
+              options: ['games, music, dancing and food', 'games, music, dancing, and food', 'games music dancing and food', 'games; music; dancing; and food']
+            },
+            correctAnswer: 'games, music, dancing, and food',
+            feedback: {
+              correct: 'Party planning perfected! Everyone will have fun!',
+              incorrect: 'Party planning needs work! Use commas in lists!'
+            }
+          },
+          {
+            id: 'list-master',
+            type: 'typing',
+            title: 'List Master',
+            instructions: 'Demonstrate mastery of list writing!',
+            content: {
+              question: 'Write a list of four school subjects.',
+              sentence: 'School subjects include ___'
+            },
+            correctAnswer: 'math, science, English, and history',
+            feedback: {
+              correct: 'List mastery achieved! Perfect educational list!',
+              incorrect: 'More practice needed! Use commas between subjects!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-7',
+        title: 'Speech Bubble Booth - Identifying Speech',
+        description: 'Identify when characters are speaking in stories',
+        type: 'lesson',
+        grammarConcept: 'Identifying Speech',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'speech-detective',
+            type: 'multiple-choice',
+            title: 'Speech Detective',
+            instructions: 'Identify which parts are speech in stories!',
+            content: {
+              sentence: 'In the sentence "Hello," said Mary, "how are you?" - what is the speech?',
+              options: ['said Mary', 'Hello, how are you', '"Hello," and "how are you?"', 'the whole sentence']
+            },
+            correctAnswer: '"Hello," and "how are you?"',
+            feedback: {
+              correct: 'Detective work excellent! Speech identified perfectly!',
+              incorrect: 'Investigation continues! Look for words in quotation marks!'
+            }
+          },
+          {
+            id: 'bubble-maker',
+            type: 'drag-drop',
+            title: 'Bubble Maker',
+            instructions: 'Create speech bubbles for character dialogue!',
+            content: {
+              words: ['Hello there', 'said the teacher', 'How are you today', 'asked the student'],
+              categories: ['Speech (in bubbles)', 'Narration (outside bubbles)']
+            },
+            correctAnswer: ['Hello there:Speech (in bubbles)', 'How are you today:Speech (in bubbles)', 'said the teacher:Narration (outside bubbles)', 'asked the student:Narration (outside bubbles)'],
+            feedback: {
+              correct: 'Bubble creation perfect! Speech clearly identified!',
+              incorrect: 'Bubble confusion! Speech goes in bubbles, narration outside!'
+            }
+          },
+          {
+            id: 'dialogue-director',
+            type: 'story-builder',
+            title: 'Dialogue Director',
+            instructions: 'Direct actors by identifying their spoken lines!',
+            content: {
+              story: 'The king announced, "___" The crowd cheered. A child whispered, "___"',
+              blanks: 2,
+              options: ['Today is a celebration', 'The crowd was happy', 'I can\'t see', 'Everyone was excited']
+            },
+            correctAnswer: ['Today is a celebration', 'I can\'t see'],
+            feedback: {
+              correct: 'Direction perfect! Actors know their lines!',
+              incorrect: 'Direction unclear! Choose words characters would speak!'
+            }
+          },
+          {
+            id: 'conversation-analyst',
+            type: 'multiple-choice',
+            title: 'Conversation Analyst',
+            instructions: 'Analyze conversations in literature!',
+            content: {
+              sentence: 'Which shows someone speaking?',
+              options: ['The boy was happy.', 'The boy said he was happy.', '"I am happy," said the boy.', 'The happy boy smiled.']
+            },
+            correctAnswer: '"I am happy," said the boy.',
+            feedback: {
+              correct: 'Analysis accurate! Direct speech identified!',
+              incorrect: 'Analysis needed! Look for quotation marks around speech!'
+            }
+          },
+          {
+            id: 'speech-coach',
+            type: 'typing',
+            title: 'Speech Coach',
+            instructions: 'Coach others in identifying speech patterns!',
+            content: {
+              question: 'Write what a character might say when they\'re excited.',
+              sentence: 'Excited character says: ___'
+            },
+            correctAnswer: 'This is amazing!',
+            feedback: {
+              correct: 'Coaching success! Perfect character speech!',
+              incorrect: 'Coaching needed! Write words a character would actually say!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-8',
+        title: 'Speech Punctuation Studio - Punctuating Speech',
+        description: 'Master the art of punctuating dialogue correctly',
+        type: 'lesson',
+        grammarConcept: 'Speech Punctuation',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'punctuation-producer',
+            type: 'multiple-choice',
+            title: 'Punctuation Producer',
+            instructions: 'Produce perfectly punctuated dialogue!',
+            content: {
+              sentence: 'Which is correctly punctuated?',
+              options: ['"Hello" said Tom.', '"Hello," said Tom.', '"Hello." said Tom', '"Hello", said Tom.']
+            },
+            correctAnswer: '"Hello," said Tom.',
+            feedback: {
+              correct: 'Production perfect! Dialogue sounds natural!',
+              incorrect: 'Production error! Check comma placement in dialogue!'
+            }
+          },
+          {
+            id: 'quotation-specialist',
+            type: 'drag-drop',
+            title: 'Quotation Specialist',
+            instructions: 'Place quotation marks around speech!',
+            content: {
+              sentence: 'Good morning, said the teacher, please sit down.',
+              words: ['"', '"', '"', '"'],
+              categories: ['Before Good', 'After morning,', 'Before please', 'After down.']
+            },
+            correctAnswer: ['"Before Good', '"After morning,', '"Before please', '"After down.'],
+            feedback: {
+              correct: 'Specialization achieved! Perfect quotation placement!',
+              incorrect: 'Specialization needed! Quotation marks surround speech!'
+            }
+          },
+          {
+            id: 'dialogue-editor',
+            type: 'story-builder',
+            title: 'Dialogue Editor',
+            instructions: 'Edit dialogue for proper punctuation!',
+            content: {
+              story: '___Where are you going___ asked Mom. ___To the park___ I replied.',
+              blanks: 4,
+              options: ['"', ',', '.', '?']
+            },
+            correctAnswer: ['"', '?', '"', ','],
+            feedback: {
+              correct: 'Editing excellence! Dialogue flows perfectly!',
+              incorrect: 'Editing revision needed! Check quotation and punctuation rules!'
+            }
+          },
+          {
+            id: 'script-writer',
+            type: 'multiple-choice',
+            title: 'Script Writer',
+            instructions: 'Write scripts with proper dialogue punctuation!',
+            content: {
+              sentence: 'How should this be punctuated: I love ice cream said Sarah',
+              options: ['"I love ice cream" said Sarah.', '"I love ice cream," said Sarah.', '"I love ice cream." said Sarah', 'I love ice cream, said Sarah.']
+            },
+            correctAnswer: '"I love ice cream," said Sarah.',
+            feedback: {
+              correct: 'Script writing mastered! Perfect dialogue format!',
+              incorrect: 'Script revision needed! Check dialogue punctuation rules!'
+            }
+          },
+          {
+            id: 'conversation-creator',
+            type: 'typing',
+            title: 'Conversation Creator',
+            instructions: 'Create conversations with perfect punctuation!',
+            content: {
+              question: 'Write a line of dialogue where someone asks a question.',
+              sentence: 'Dialogue with question: ___'
+            },
+            correctAnswer: '"What time is it?" asked John.',
+            feedback: {
+              correct: 'Creation masterful! Perfect dialogue punctuation!',
+              incorrect: 'Creation needs work! Include quotation marks and proper punctuation!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-9',
+        title: 'Contraction Station - Understanding Contractions',
+        description: 'Learn how words combine and transform with apostrophes',
+        type: 'lesson',
+        grammarConcept: 'Understanding Contractions',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'contraction-scientist',
+            type: 'multiple-choice',
+            title: 'Contraction Scientist',
+            instructions: 'Study how contractions are formed!',
+            content: {
+              sentence: 'What does "can\'t" stand for?',
+              options: ['can not', 'cannot', 'can\'t not', 'can it']
+            },
+            correctAnswer: 'cannot',
+            feedback: {
+              correct: 'Scientific discovery! Contraction decoded perfectly!',
+              incorrect: 'Research continues! "Can\'t" means "cannot"!'
+            }
+          },
+          {
+            id: 'word-combiner',
+            type: 'drag-drop',
+            title: 'Word Combiner',
+            instructions: 'Combine words to form contractions!',
+            content: {
+              words: ['do not', 'will not', 'I am', 'you are'],
+              categories: ['don\'t', 'won\'t', 'I\'m', 'you\'re']
+            },
+            correctAnswer: ['do not:don\'t', 'will not:won\'t', 'I am:I\'m', 'you are:you\'re'],
+            feedback: {
+              correct: 'Combination complete! All contractions formed correctly!',
+              incorrect: 'Combination error! Check which words combine!'
+            }
+          },
+          {
+            id: 'apostrophe-placer',
+            type: 'story-builder',
+            title: 'Apostrophe Placer',
+            instructions: 'Place apostrophes correctly in contractions!',
+            content: {
+              story: 'I dont know where youre going, but well find out.',
+              blanks: 3,
+              options: ['\'', '\'', '\'', ',', '.']
+            },
+            correctAnswer: ['\'', '\'', '\''],
+            feedback: {
+              correct: 'Placement perfect! All apostrophes correctly positioned!',
+              incorrect: 'Placement practice needed! Apostrophes replace missing letters!'
+            }
+          },
+          {
+            id: 'contraction-decoder',
+            type: 'multiple-choice',
+            title: 'Contraction Decoder',
+            instructions: 'Decode contractions back to original words!',
+            content: {
+              sentence: 'What is the full form of "they\'re"?',
+              options: ['they are', 'they were', 'their', 'there']
+            },
+            correctAnswer: 'they are',
+            feedback: {
+              correct: 'Decoding successful! Message understood clearly!',
+              incorrect: 'Decoding error! "They\'re" means "they are"!'
+            }
+          },
+          {
+            id: 'contraction-teacher',
+            type: 'typing',
+            title: 'Contraction Teacher',
+            instructions: 'Teach others about contraction formation!',
+            content: {
+              question: 'Write the contraction for "we will".',
+              sentence: 'Contraction: ___'
+            },
+            correctAnswer: 'we\'ll',
+            feedback: {
+              correct: 'Teaching excellence! Perfect contraction formation!',
+              incorrect: 'Teaching moment! "We will" becomes "we\'ll"!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-10',
+        title: 'Contraction Workshop - Using Contractions',
+        description: 'Practice using contractions in natural speech and writing',
+        type: 'lesson',
+        grammarConcept: 'Using Contractions',
+        rewardStarDust: 50,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'casual-conversation',
+            type: 'multiple-choice',
+            title: 'Casual Conversation',
+            instructions: 'Make speech sound more natural with contractions!',
+            content: {
+              sentence: 'Which sounds more natural in casual speech?',
+              options: ['I cannot go to the party.', 'I can\'t go to the party.', 'I can not go to the party.', 'I will not go to the party.']
+            },
+            correctAnswer: 'I can\'t go to the party.',
+            feedback: {
+              correct: 'Conversation flows naturally! Perfect contraction usage!',
+              incorrect: 'Conversation sounds formal! Contractions make speech casual!'
+            }
+          },
+          {
+            id: 'text-message-writer',
+            type: 'story-builder',
+            title: 'Text Message Writer',
+            instructions: 'Write text messages using appropriate contractions!',
+            content: {
+              story: 'Hey! I ___ make it to the movie. ___ you want to go tomorrow instead?',
+              blanks: 2,
+              options: ['can\'t', 'cannot', 'Don\'t', 'Do not', 'Won\'t', 'Will not']
+            },
+            correctAnswer: ['can\'t', 'Don\'t'],
+            feedback: {
+              correct: 'Text sent successfully! Natural contraction usage!',
+              incorrect: 'Text sounds too formal! Use contractions in casual messages!'
+            }
+          },
+          {
+            id: 'dialogue-naturalizer',
+            type: 'drag-drop',
+            title: 'Dialogue Naturalizer',
+            instructions: 'Make dialogue sound more natural with contractions!',
+            content: {
+              words: ['I do not know', 'We will see', 'They are coming', 'You have been'],
+              categories: ['I don\'t know', 'We\'ll see', 'They\'re coming', 'You\'ve been']
+            },
+            correctAnswer: ['I do not know:I don\'t know', 'We will see:We\'ll see', 'They are coming:They\'re coming', 'You have been:You\'ve been'],
+            feedback: {
+              correct: 'Dialogue naturalized! Conversations sound realistic!',
+              incorrect: 'Dialogue still formal! Match contractions with full forms!'
+            }
+          },
+          {
+            id: 'speech-coach',
+            type: 'multiple-choice',
+            title: 'Speech Coach',
+            instructions: 'Coach characters to speak naturally!',
+            content: {
+              sentence: 'In a friendly conversation, which is better?',
+              options: ['We are going to have fun!', 'We\'re going to have fun!', 'We will have fun!', 'We shall have fun!']
+            },
+            correctAnswer: 'We\'re going to have fun!',
+            feedback: {
+              correct: 'Coaching success! Speech sounds friendly and natural!',
+              incorrect: 'Coaching needed! Contractions make speech friendlier!'
+            }
+          },
+          {
+            id: 'contraction-master',
+            type: 'typing',
+            title: 'Contraction Master',
+            instructions: 'Demonstrate mastery of contraction usage!',
+            content: {
+              question: 'Rewrite this formally: "I would not do that if I were you."',
+              sentence: 'Casual version: ___'
+            },
+            correctAnswer: 'I wouldn\'t do that if I were you.',
+            feedback: {
+              correct: 'Mastery achieved! Perfect casual contraction usage!',
+              incorrect: 'More practice needed! "Would not" becomes "wouldn\'t"!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-11',
+        title: 'Punctuation Review Rally - Revising Punctuation',
+        description: 'Rally through all punctuation concepts learned',
+        type: 'lesson',
+        grammarConcept: 'Punctuation Review',
+        rewardStarDust: 75,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'punctuation-champion',
+            type: 'multiple-choice',
+            title: 'Punctuation Champion',
+            instructions: 'Demonstrate championship-level punctuation skills!',
+            content: {
+              sentence: 'Which sentence is perfectly punctuated?',
+              options: ['wow that was amazing', 'Wow, that was amazing!', 'wow, that was amazing.', 'Wow that was amazing?']
+            },
+            correctAnswer: 'Wow, that was amazing!',
+            feedback: {
+              correct: 'Championship won! Perfect punctuation mastery!',
+              incorrect: 'Championship training continues! Check all punctuation rules!'
+            }
+          },
+          {
+            id: 'error-hunter',
+            type: 'drag-drop',
+            title: 'Error Hunter',
+            instructions: 'Hunt down punctuation errors in various sentences!',
+            content: {
+              words: ['Hello, how are you?', 'hello how are you', 'I can\'t wait!', 'I cant wait', 'Red, blue, and green.', 'Red blue and green'],
+              categories: ['Correct', 'Has Errors']
+            },
+            correctAnswer: ['Hello, how are you?:Correct', 'I can\'t wait!:Correct', 'Red, blue, and green.:Correct', 'hello how are you:Has Errors', 'I cant wait:Has Errors', 'Red blue and green:Has Errors'],
+            feedback: {
+              correct: 'Hunt successful! All errors identified and corrected!',
+              incorrect: 'Hunt continues! Check capitalization, punctuation, and contractions!'
+            }
+          },
+          {
+            id: 'punctuation-medic',
+            type: 'story-builder',
+            title: 'Punctuation Medic',
+            instructions: 'Heal sick sentences with proper punctuation!',
+            content: {
+              story: 'help___ im lost___ can you hear me___ this is terrible___',
+              blanks: 4,
+              options: ['!', '?', '.', ',']
+            },
+            correctAnswer: ['!', '!', '?', '!'],
+            feedback: {
+              correct: 'Medical miracle! All sentences healed perfectly!',
+              incorrect: 'Patient needs more treatment! Match punctuation to emotion!'
+            }
+          },
+          {
+            id: 'punctuation-teacher',
+            type: 'multiple-choice',
+            title: 'Punctuation Teacher',
+            instructions: 'Teach others about punctuation mastery!',
+            content: {
+              sentence: 'What\'s the most important rule for punctuation?',
+              options: ['Always use periods', 'Match punctuation to meaning', 'Use lots of exclamation marks', 'Avoid commas']
+            },
+            correctAnswer: 'Match punctuation to meaning',
+            feedback: {
+              correct: 'Teaching wisdom! Perfect punctuation philosophy!',
+              incorrect: 'Teaching moment! Punctuation should match the meaning!'
+            }
+          },
+          {
+            id: 'punctuation-artist',
+            type: 'typing',
+            title: 'Punctuation Artist',
+            instructions: 'Create artistic sentences with perfect punctuation!',
+            content: {
+              question: 'Write a sentence that uses a question, exclamation, and list.',
+              sentence: 'Artistic sentence: ___'
+            },
+            correctAnswer: 'Can you believe we saw lions, tigers, and bears? Amazing!',
+            feedback: {
+              correct: 'Artistic masterpiece! Perfect punctuation symphony!',
+              incorrect: 'Art needs refinement! Include question, exclamation, and list!'
+            }
+          }
+        ]
+      },
+      {
+        id: 'palace-lesson-12',
+        title: 'Sentence Writing Studio - Writing Sentences',
+        description: 'Master the complete art of sentence writing with perfect punctuation',
+        type: 'lesson',
+        grammarConcept: 'Complete Sentence Writing',
+        rewardStarDust: 100,
+        isCompleted: false,
+        isUnlocked: true,
+        activities: [
+          {
+            id: 'sentence-architect',
+            type: 'multiple-choice',
+            title: 'Sentence Architect',
+            instructions: 'Design architectural marvels of sentences!',
+            content: {
+              sentence: 'What makes a sentence complete and well-punctuated?',
+              options: ['Just a subject', 'Subject + verb + proper punctuation', 'Lots of adjectives', 'Long length']
+            },
+            correctAnswer: 'Subject + verb + proper punctuation',
+            feedback: {
+              correct: 'Architectural genius! Perfect sentence blueprint!',
+              incorrect: 'Blueprint revision needed! Complete sentences need subject, verb, and punctuation!'
+            }
+          },
+          {
+            id: 'writing-virtuoso',
+            type: 'story-builder',
+            title: 'Writing Virtuoso',
+            instructions: 'Compose virtuoso-level writing with varied sentences!',
+            content: {
+              story: 'The concert was amazing___ Did you enjoy it___ I loved every minute___ What a performance___',
+              blanks: 4,
+              options: ['.', '!', '?', ',']
+            },
+            correctAnswer: ['.', '?', '!', '!'],
+            feedback: {
+              correct: 'Virtuoso performance! Perfect sentence variety and punctuation!',
+              incorrect: 'Performance needs practice! Match punctuation to sentence type!'
+            }
+          },
+          {
+            id: 'master-editor',
+            type: 'drag-drop',
+            title: 'Master Editor',
+            instructions: 'Edit writing to perfection with flawless punctuation!',
+            content: {
+              words: ['Perfect sentence', 'Needs editing', 'The sun shines brightly.', 'the sun shines brightly', 'What a beautiful day!', 'what a beautiful day', 'Are you coming?', 'are you coming'],
+              categories: ['Perfect', 'Needs Work']
+            },
+            correctAnswer: ['The sun shines brightly.:Perfect', 'What a beautiful day!:Perfect', 'Are you coming?:Perfect', 'Perfect sentence:Perfect', 'the sun shines brightly:Needs Work', 'what a beautiful day:Needs Work', 'are you coming:Needs Work', 'Needs editing:Needs Work'],
+            feedback: {
+              correct: 'Master editing achieved! All sentences perfected!',
+              incorrect: 'Editing continues! Check capitalization and end punctuation!'
+            }
+          },
+          {
+            id: 'writing-mentor',
+            type: 'multiple-choice',
+            title: 'Writing Mentor',
+            instructions: 'Mentor others in the art of sentence writing!',
+            content: {
+              sentence: 'What\'s the best advice for new writers?',
+              options: ['Write long sentences', 'Use big words', 'Match punctuation to meaning', 'Avoid punctuation']
+            },
+            correctAnswer: 'Match punctuation to meaning',
+            feedback: {
+              correct: 'Mentoring mastery! Perfect writing wisdom shared!',
+              incorrect: 'Mentoring moment! Good writing matches punctuation to meaning!'
+            }
+          },
+          {
+            id: 'sentence-master',
+            type: 'typing',
+            title: 'Sentence Master',
+            instructions: 'Demonstrate complete mastery of sentence writing!',
+            content: {
+              question: 'Write a paragraph with different sentence types and perfect punctuation.',
+              sentence: 'Master paragraph: ___'
+            },
+            correctAnswer: 'I love reading books. Do you have a favorite author? Reading is so exciting! My favorite books are mysteries, adventures, and fantasies.',
+            feedback: {
+              correct: 'Sentence mastery achieved! Perfect writing with flawless punctuation!',
+              incorrect: 'Mastery in progress! Include different sentence types with proper punctuation!'
+            }
+          }
+        ]
       }
     ]
   }

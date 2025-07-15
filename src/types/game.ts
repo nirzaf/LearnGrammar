@@ -64,7 +64,21 @@ export interface Achievement {
   title: string
   description: string
   icon: string
-  unlockedAt: Date
+  category: 'progress' | 'mastery' | 'exploration' | 'special'
+  rarity: 'common' | 'rare' | 'epic' | 'legendary'
+  requirements: {
+    type: 'lessons_completed' | 'planet_completed' | 'perfect_scores' | 'streak' | 'star_dust' | 'time_spent'
+    target: number
+    planetId?: string
+    grammarConcept?: string
+  }
+  reward: {
+    starDust: number
+    title?: string
+  }
+  isUnlocked: boolean
+  unlockedAt?: Date
+  progress: number
 }
 
 export interface CompanionState {

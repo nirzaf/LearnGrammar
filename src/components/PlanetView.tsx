@@ -99,6 +99,7 @@ const PlanetView: React.FC<PlanetViewProps> = ({
     return (
       <LessonActivity
         lesson={selectedLesson}
+        planet={planet}
         onBack={handleLessonBack}
         onComplete={handleLessonComplete}
       />

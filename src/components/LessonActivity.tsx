@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
-import type { Lesson } from '../types/game'
+import type { Lesson, Planet } from '../types/game'
+import CharacterGuide from './CharacterGuide'
 
 interface LessonActivityProps {
   lesson: Lesson
+  planet: Planet
   onBack: () => void
   onComplete: (lessonId: string, starDustEarned: number) => void
 }
@@ -11,9 +13,10 @@ interface LessonActivityProps {
  * Lesson Activity component handling interactive grammar exercises
  * Supports multiple activity types: drag-drop, multiple-choice, typing, etc.
  */
-const LessonActivity: React.FC<LessonActivityProps> = ({ 
-  lesson, 
-  onBack, 
+const LessonActivity: React.FC<LessonActivityProps> = ({
+  lesson,
+  planet,
+  onBack,
   onComplete
 }) => {
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0)
@@ -26,6 +29,9 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   const [isCorrect, setIsCorrect] = useState(false)
   const [activityCompleted, setActivityCompleted] = useState(false)
   const [lessonProgress, setLessonProgress] = useState(0)
+  const [showCharacterGuide, setShowCharacterGuide] = useState(false)
+  const [characterMessage, setCharacterMessage] = useState('')
+  const [showIntroduction, setShowIntroduction] = useState(true)
 
   const currentActivity = lesson.activities[currentActivityIndex]
   const isLastActivity = currentActivityIndex === lesson.activities.length - 1
@@ -45,6 +51,15 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   }, [currentActivityIndex])
 
   /**
+   * Show character guide introduction when lesson starts
+   */
+  useEffect(() => {
+    if (showIntroduction) {
+      setShowCharacterGuide(true)
+    }
+  }, [showIntroduction])
+
+  /**
    * Update lesson progress
    */
   useEffect(() => {
@@ -55,6 +70,12 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
   /**
    * Handle answer submission
    */
+  const showCharacterFeedback = (message: string) => {
+    setCharacterMessage(message)
+    setShowCharacterGuide(true)
+    setShowIntroduction(false)
+  }
+
   const handleSubmitAnswer = () => {
     let userResponse = ''
 
@@ -92,6 +113,10 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
 
     if (correct) {
       setActivityCompleted(true)
+      // Show character encouragement after a short delay
+      setTimeout(() => {
+        showCharacterFeedback('')
+      }, 1500)
     }
   }
 
@@ -500,8 +525,31 @@ const LessonActivity: React.FC<LessonActivityProps> = ({
             )}
           </div>
         </div>
+
+        {/* Character Guide Help Button */}
+        <div className="fixed bottom-4 right-4">
+          <button
+            onClick={() => showCharacterFeedback('')}
+            className="bg-cosmic-purple hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-colors"
+            title="Get help from your character guide"
+          >
+            👤
+          </button>
+        </div>
       </div>
     </div>
+
+    {/* Character Guide Modal */}
+    <CharacterGuide
+      planet={planet}
+      isVisible={showCharacterGuide}
+      onClose={() => {
+        setShowCharacterGuide(false)
+        setShowIntroduction(false)
+      }}
+      message={characterMessage}
+      showIntroduction={showIntroduction}
+    />
   )
 }
 
